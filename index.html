@@ -12,6 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <script>
+        function openNewWindow(url) {
+          window.open(url, '_blank');
+        }
+        </script>
 
 </head>
 <body>
@@ -150,41 +155,36 @@
         <div class="max-width">
             <h2 class="title">Publications</h2>
             <div class="carousel owl-carousel">
-                <div class="card">
-                    <div class="box">
-                        <img src="images/profile-1.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <div class="card">
+                
+                <div class="card" onclick="openNewWindow('https://www.mdpi.com/2071-1050/16/1/409');">
                     <div class="box">
                         <img src="images/profile-2.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="text">Sustainablity 2024</div>
+                        <p>Geospatial Tools and Remote Sensing Strategies for Timely Humanitarian Response: A Case Study on Drought Monitoring in Eswatini</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openNewWindow('https://www.mdpi.com/2071-1050/15/12/9344');">
+                    <div class="box">
+                        <img src="images/profile-1.jpeg" alt="">
+                        <div class="text">Sustainablity 2023</div>
+                        <p>Multi-Level Participatory GIS Framework to Assess Mobility Needs and Transport Barriers in Rural Areas: A Case Study of Rural Mumias East, a Sub-County of Kakamega, Kenya</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openNewWindow('https://link.springer.com/article/10.1007/s10113-023-02043-0');">
                     <div class="box">
                         <img src="images/profile-3.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="text">Regional Environmental Change</div>
+                        <p>Climate change–driven agricultural frontiers and their ecosystem trade-offs in the hills of Nepal</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openNewWindow('https://leprosyreview.org/article/93/4/20-22071');">
                     <div class="box">
                         <img src="images/profile-4.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="text">LeprosyReview</div>
+                        <p>Trends and geographical variation in leprosy case detection and disability in Nepal, 2010–2021</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/profile-5.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
