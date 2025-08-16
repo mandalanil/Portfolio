@@ -129,14 +129,14 @@
             <div class="mt-8 flex justify-center space-x-4">
                 <a href="#contact" class="bg-[#0D47A1] text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Get in Touch</a>
                 <!-- Added LinkedIn button -->
-                <a href="https://www.linkedin.com/in/anil-kumar-mandal-9b2094140/" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
                     <i class="fab fa-linkedin mr-2"></i>LinkedIn
                 </a>
-                <a href="https://scholar.google.com/citations?user=Fvs_P1QAAAAJ&hl=en" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
+                <a href="https://scholar.google.com/citations?user=your_id_here" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
                     <i class="fas fa-graduation-cap mr-2"></i>Google Scholar
                 </a>
                 <!-- Added Github button to the home page -->
-                <a href="https://github.com/mandalanil" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
+                <a href="https://github.com/yourprofile" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
                     <i class="fab fa-github mr-2"></i>Github
                 </a>
             </div>
@@ -356,13 +356,18 @@
                 </div>
                 <div class="md:w-1/2">
                     <div class="text-xl font-semibold text-[#0D47A1] mb-4">Message me</div>
-                    <form action="#" class="space-y-4">
-                        <input type="text" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                        <input type="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                        <input type="text" placeholder="Subject" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                        <textarea cols="30" rows="6" placeholder="Your Message..." required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]"></textarea>
+                    <!-- The form action is updated to use Formspree. You need to replace the placeholder ID with your own. -->
+                    <form id="contact-form" action="https://form.jotform.com/252274818753061" method="POST" class="space-y-4">
+                        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
+                        <input type="email" name="_replyto" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
+                        <input type="text" name="_subject" placeholder="Subject" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
+                        <textarea name="message" cols="30" rows="6" placeholder="Your Message..." required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]"></textarea>
                         <button type="submit" class="w-full bg-[#0D47A1] text-white p-3 rounded-lg font-semibold shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Send Message</button>
                     </form>
+                    <!-- Success message container -->
+                    <div id="form-status" class="mt-4 text-center text-green-600 font-semibold hidden">
+                        Thank you! Your message has been sent.
+                    </div>
                 </div>
             </div>
         </div>
@@ -373,7 +378,7 @@
         <p>Created by <a href="#" class="text-[#0D47A1] hover:underline">AnilMandal</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</p>
     </footer>
 
-    <!-- Simple JavaScript for navigation and scroll button -->
+    <!-- Simple JavaScript for navigation and scroll button and form submission -->
     <script>
         // Toggle mobile menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -397,6 +402,35 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Formspree submission handling
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formStatus.classList.remove('hidden');
+                form.reset();
+                // Hide the message after 5 seconds
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+            } else {
+                formStatus.textContent = "Oops! There was a problem submitting your form.";
+                formStatus.classList.remove('hidden', 'text-green-600');
+                formStatus.classList.add('text-red-600');
+            }
         });
     </script>
 
