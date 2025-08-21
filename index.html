@@ -18,16 +18,16 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            /* Use a professional, subtle background image */
-            background-image: url('https://images.unsplash.com/photo-1510519108151-5121b65b63cf?q=80&w=2670&auto=format&fit=crop');
+            /* Use a professional, subtle background image related to geospatial science */
+            background-image: url('https://images.unsplash.com/photo-1498703649568-3e4b77f99990?q=80&w=2940&auto=format&fit=crop');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* A semi-transparent overlay on the content sections for readability */
+        /* A semi-transparent overlay on the content sections for readability, using a slightly darker, more professional alpha */
         .content-section {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
         /* Custom scroll-up button style */
@@ -75,7 +75,7 @@
 
 <body class="text-gray-800">
 
-    <!-- Scroll up button -->
+    <!-- Scroll up button, visible only when scrolled down -->
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
@@ -86,6 +86,7 @@
             <div class="flex items-center">
                 <a href="#home" class="text-2xl font-bold text-gray-800">Anil<span class="text-gray-500">Mandal</span></a>
             </div>
+            <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-8 text-lg font-medium">
                 <a href="#home" class="hover:text-[#0D47A1] transition-colors duration-300">Home</a>
                 <a href="#about" class="hover:text-[#0D47A1] transition-colors duration-300">About</a>
@@ -101,7 +102,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile menu container -->
+        <!-- Mobile menu container, toggles visibility with JS -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Home</a>
@@ -116,6 +117,7 @@
 
     <!-- Home section -->
     <section id="home" class="min-h-screen flex items-center justify-center text-center py-24 text-gray-800">
+        <!-- Content container with a semi-transparent, rounded background -->
         <div class="max-w-4xl mx-auto px-4 bg-white/70 backdrop-blur-md rounded-xl p-8 shadow-2xl">
             <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight">
                 Anil Kumar Mandal
@@ -126,19 +128,10 @@
             <p class="mt-6 text-lg sm:text-xl max-w-2xl mx-auto">
                 Applying GIS, remote sensing, and LiDAR to tackle challenges in climate resilience, hydrology, and urban planning.
             </p>
-            <div class="mt-8 flex justify-center space-x-4">
+            <!-- Call to action buttons with social links -->
+            <div id="home-social-links" class="mt-8 flex flex-wrap justify-center gap-4">
                 <a href="#contact" class="bg-[#0D47A1] text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Get in Touch</a>
-                <!-- Added LinkedIn button -->
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
-                    <i class="fab fa-linkedin mr-2"></i>LinkedIn
-                </a>
-                <a href="https://scholar.google.com/citations?user=your_id_here" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
-                    <i class="fas fa-graduation-cap mr-2"></i>Google Scholar
-                </a>
-                <!-- Added Github button to the home page -->
-                <a href="https://github.com/yourprofile" target="_blank" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300">
-                    <i class="fab fa-github mr-2"></i>Github
-                </a>
+                <!-- Social media links will be injected here by JavaScript -->
             </div>
         </div>
     </section>
@@ -149,8 +142,8 @@
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">About Me</h2>
             <div class="md:flex md:space-x-12 items-center">
                 <div class="md:w-1/3 flex justify-center mb-8 md:mb-0">
-                    <!-- Placeholder for profile image -->
-                    <img src="images\new_pp.jpeg" alt="Anil Kumar Mandal" class="rounded-xl shadow-xl border-4 border-gray-300">
+                    <!-- Placeholder for profile image. Replace this URL with your actual image. -->
+                    <img src="images\profile.png" alt="Anil Kumar Mandal" class="rounded-xl shadow-xl border-4 border-gray-300">
                 </div>
                 <div class="md:w-2/3">
                     <p class="text-lg leading-relaxed text-gray-600">
@@ -159,7 +152,8 @@
                     <p class="mt-4 text-lg leading-relaxed text-gray-600">
                         I have a strong publication record and advanced programming skills, with practical field expertise across global environments. I am recognized by USGIF and multiple research bodies for my innovation in geospatial analytics. Currently, I am pursuing a PhD in Transportation & Environmental Engineering at Florida Atlantic University, building on my Master's and Bachelor's degrees in Civil and Geomatics Engineering.
                     </p>
-                    <a href="#" class="mt-6 inline-block bg-[#0D47A1] text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Download CV</a>
+                    <!-- NOTE: The CV download link now points to a local file -->
+                    <a href="Anil_Mandal_CV.pdf" download class="mt-6 inline-block bg-[#0D47A1] text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Download CV</a>
                 </div>
             </div>
         </div>
@@ -172,7 +166,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <!-- FAU Experience Card -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                     <h3 class="text-2xl font-bold text-[#0D47A1] mb-2">Graduate Research Assistant</h3>
                     <p class="text-gray-500 mt-1">Florida Atlantic University, Boca Raton, FL</p>
                     <p class="text-gray-400 text-sm italic mt-1">Aug 2023 – Present</p>
@@ -186,7 +180,7 @@
                 </div>
 
                 <!-- NAXA Pvt. Ltd. Experience Card -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                     <h3 class="text-2xl font-bold text-[#0D47A1] mb-2">GIS & Remote Sensing Technical Lead</h3>
                     <p class="text-gray-500 mt-1">NAXA Pvt. Ltd., Nepal</p>
                     <p class="text-gray-400 text-sm italic mt-1">Sep 2018 – Jul 2023</p>
@@ -209,35 +203,35 @@
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">My Skills</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
                 <!-- Skill Card -->
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-satellite text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">Remote Sensing</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-map-marked-alt text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">GIS</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-fighter-jet text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">UAV</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-mountain text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">LiDAR</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fab fa-python text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">Python</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-globe text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">Google Earth Engine</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-water text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">Hydrologic Analysis</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-110 border border-[#1565C0] hover:bg-gray-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
                     <i class="fas fa-chart-line text-4xl text-[#0D47A1]"></i>
                     <p class="mt-4 text-gray-700 font-semibold">Spatial Analytics & ML</p>
                 </div>
@@ -250,9 +244,10 @@
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Publications</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- NOTE: Replace '#' and the hrefs with the actual publication links -->
                 <!-- Publication Card 1 -->
                 <a href="https://www.mdpi.com/2071-1050/16/1/409" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                         <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
                         <h3 class="text-lg font-bold text-[#0D47A1]">Geospatial Tools for Drought Monitoring</h3>
                         <p class="text-sm text-gray-500 italic">Sustainability, 2024</p>
@@ -261,7 +256,7 @@
                 </a>
                 <!-- Publication Card 2 -->
                 <a href="https://www.mdpi.com/2071-1050/15/12/9344" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                         <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
                         <h3 class="text-lg font-bold text-[#0D47A1]">Multi-level Participatory GIS Framework</h3>
                         <p class="text-sm text-gray-500 italic">Sustainability, 2023</p>
@@ -270,7 +265,7 @@
                 </a>
                 <!-- Publication Card 3 -->
                 <a href="https://link.springer.com/article/10.1007/s10113-023-02043-0" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                         <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
                         <h3 class="text-lg font-bold text-[#0D47A1]">Agricultural Frontiers & Ecosystem Trade-offs</h3>
                         <p class="text-sm text-gray-500 italic">Regional Environmental Change, 2023</p>
@@ -279,7 +274,7 @@
                 </a>
                 <!-- Publication Card 4 -->
                 <a href="https://leprosyreview.org/article/93/4/20-22071" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                         <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
                         <h3 class="text-lg font-bold text-[#0D47A1]">Leprosy Detection & Disability Trends</h3>
                         <p class="text-sm text-gray-500 italic">Leprosy Review, 2022</p>
@@ -288,7 +283,7 @@
                 </a>
                 <!-- Publication Card 5 -->
                 <a href="#" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 border border-[#1565C0]">
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
                         <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
                         <h3 class="text-lg font-bold text-[#0D47A1]">Semi-automated Flood Risk Modeling</h3>
                         <p class="text-sm text-gray-500 italic">Natural Hazards, 2025</p>
@@ -333,30 +328,14 @@
                     <!-- Social Media Links -->
                     <div class="mt-8">
                         <div class="text-xl font-semibold text-[#0D47A1] mb-4">Find me on social media</div>
-                        <div class="flex space-x-6">
-                            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125">
-                                <i class="fab fa-linkedin text-3xl"></i>
-                            </a>
-                            <a href="https://github.com/yourprofile" target="_blank" class="text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125">
-                                <i class="fab fa-github text-3xl"></i>
-                            </a>
-                            <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125">
-                                <i class="fab fa-twitter text-3xl"></i>
-                            </a>
-                            <!-- Added Facebook link to the contact section -->
-                            <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125">
-                                <i class="fab fa-facebook text-3xl"></i>
-                            </a>
-                            <!-- Re-added Github link for consistency -->
-                            <a href="https://github.com/yourprofile" target="_blank" class="text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125">
-                                <i class="fab fa-github text-3xl"></i>
-                            </a>
+                        <div id="contact-social-links" class="flex flex-wrap gap-4">
+                            <!-- Social media links will be injected here by JavaScript -->
                         </div>
                     </div>
                 </div>
                 <div class="md:w-1/2">
                     <div class="text-xl font-semibold text-[#0D47A1] mb-4">Message me</div>
-                    <!-- The form action is updated to use Formspree. You need to replace the placeholder ID with your own. -->
+                    <!-- Formspree form for direct contact. NOTE: Replace the action URL with your own Formspree endpoint. -->
                     <form id="contact-form" action="https://formspree.io/f/xovlzqjo" method="POST" class="space-y-4">
                         <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
                         <input type="email" name="_replyto" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
@@ -364,7 +343,7 @@
                         <textarea name="message" cols="30" rows="6" placeholder="Your Message..." required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]"></textarea>
                         <button type="submit" class="w-full bg-[#0D47A1] text-white p-3 rounded-lg font-semibold shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Send Message</button>
                     </form>
-                    <!-- Success message container -->
+                    <!-- Success message container for Formspree submission -->
                     <div id="form-status" class="mt-4 text-center text-green-600 font-semibold hidden">
                         Thank you! Your message has been sent.
                     </div>
@@ -378,56 +357,135 @@
         <p>Created by <a href="#" class="text-[#0D47A1] hover:underline">AnilMandal</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</p>
     </footer>
 
-    <!-- Simple JavaScript for navigation and scroll button and form submission -->
+    <!-- Simple JavaScript for navigation, scroll button, and form submission -->
     <script>
-        // Toggle mobile menu
+        // Define social media links and icons in a single object for reusability
+        const socialLinks = {
+            linkedin: { url: "https://www.linkedin.com/in/anil-kumar-mandal-9b2094140/", icon: "fab fa-linkedin", text: "LinkedIn" },
+            github: { url: "https://github.com/mandalanil", icon: "fab fa-github", text: "Github" },
+            googleScholar: { url: "https://scholar.google.com/citations?user=Fvs_P1QAAAAJ&hl=en", icon: "fas fa-graduation-cap", text: "Google Scholar" },
+            instagram: { url: "#", icon: "fab fa-instagram", text: "Instagram" },
+            facebook: { url: "#", icon: "fab fa-facebook", text: "Facebook" }
+        };
+
+        // Function to create a social link HTML element
+        function createSocialLink(link, includeText = false) {
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.target = "_blank";
+            
+            const i = document.createElement('i');
+            i.className = `${link.icon} text-3xl`;
+            if (includeText) {
+                i.className += " mr-2";
+            }
+            a.appendChild(i);
+
+            if (includeText && link.text) {
+                const textNode = document.createTextNode(link.text);
+                a.className = "bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300";
+                a.appendChild(textNode);
+            } else {
+                 a.className = "text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125";
+            }
+            return a;
+        }
+
+        // Dynamically add social links to the home section
+        const homeSocialLinksContainer = document.getElementById('home-social-links');
+        // Clear existing content to avoid duplication on re-renders
+        homeSocialLinksContainer.innerHTML = '';
+        const homeLinks = ['linkedin', 'github', 'googleScholar'];
+        homeLinks.forEach(key => {
+            homeSocialLinksContainer.appendChild(createSocialLink(socialLinks[key], true));
+        });
+
+        // Dynamically add social links to the contact section
+        const contactSocialLinksContainer = document.getElementById('contact-social-links');
+        // Clear existing content to avoid duplication on re-renders
+        contactSocialLinksContainer.innerHTML = '';
+        const contactLinks = ['linkedin', 'github', 'instagram', 'facebook'];
+        contactLinks.forEach(key => {
+            contactSocialLinksContainer.appendChild(createSocialLink(socialLinks[key], false));
+        });
+
+        // Toggle mobile menu visibility
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Scroll up button functionality
+        // Hide mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Get the scroll-up button element
         const scrollUpBtn = document.querySelector('.scroll-up-btn');
+        
+        // Listen for scroll events on the window
         window.addEventListener('scroll', () => {
+            // Show the button if the user has scrolled down more than 500 pixels
             if (window.scrollY > 500) {
                 scrollUpBtn.classList.add('show');
             } else {
+                // Hide the button if the user is near the top of the page
                 scrollUpBtn.classList.remove('show');
             }
         });
 
+        // Add a click event listener to the scroll-up button
         scrollUpBtn.addEventListener('click', () => {
+            // Smoothly scroll the page back to the top
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
 
-        // Formspree submission handling
+        // Get the contact form and status message elements
         const form = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
 
+        // Listen for form submission
         form.addEventListener("submit", async (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevent the default form submission behavior
+            
+            // Create a FormData object from the form
             const formData = new FormData(form);
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+            
+            try {
+                // Submit the form data to Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            if (response.ok) {
-                formStatus.classList.remove('hidden');
-                form.reset();
-                // Hide the message after 5 seconds
-                setTimeout(() => {
-                    formStatus.classList.add('hidden');
-                }, 5000);
-            } else {
-                formStatus.textContent = "Oops! There was a problem submitting your form.";
+                if (response.ok) {
+                    // On success, show the success message
+                    formStatus.textContent = "Thank you! Your message has been sent.";
+                    formStatus.classList.remove('hidden', 'text-red-600');
+                    formStatus.classList.add('text-green-600');
+                    form.reset(); // Clear the form fields
+                    // Hide the message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    // On failure, show an error message
+                    formStatus.textContent = "Oops! There was a problem submitting your form.";
+                    formStatus.classList.remove('hidden', 'text-green-600');
+                    formStatus.classList.add('text-red-600');
+                }
+            } catch (error) {
+                // Handle any network or other errors
+                formStatus.textContent = "Error: Could not connect to the server.";
                 formStatus.classList.remove('hidden', 'text-green-600');
                 formStatus.classList.add('text-red-600');
             }
