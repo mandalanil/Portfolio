@@ -18,14 +18,9 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            /* Use a professional, subtle background image related to geospatial science */
-            background-image: url('https://images.unsplash.com/photo-1498703649568-3e4b77f99990?q=80&w=2940&auto=format&fit=crop');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
         }
 
-        /* A semi-transparent overlay on the content sections for readability, using a slightly darker, more professional alpha */
+        /* A semi-transparent overlay on the content sections for readability */
         .content-section {
             background-color: rgba(255, 255, 255, 0.9);
         }
@@ -115,8 +110,8 @@
         </div>
     </nav>
 
-    <!-- Home section -->
-    <section id="home" class="min-h-screen flex items-center justify-center text-center py-24 text-gray-800">
+    <!-- Home section with background image -->
+    <section id="home" class="min-h-screen flex items-center justify-center text-center py-24 text-gray-800 bg-cover bg-fixed bg-center" style="background-image: url('images/banner.jpg');">
         <!-- Content container with a semi-transparent, rounded background -->
         <div class="max-w-4xl mx-auto px-4 bg-white/70 backdrop-blur-md rounded-xl p-8 shadow-2xl">
             <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight">
@@ -142,8 +137,8 @@
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">About Me</h2>
             <div class="md:flex md:space-x-12 items-center">
                 <div class="md:w-1/3 flex justify-center mb-8 md:mb-0">
-                    <!-- Placeholder for profile image. Replace this URL with your actual image. -->
-                    <img src="images\profile.png" alt="Anil Kumar Mandal" class="rounded-xl shadow-xl border-4 border-gray-300">
+                    <!-- NOTE: The profile image now uses a relative path from your project directory -->
+                    <img src="images/profile.png" alt="Anil Kumar Mandal" class="rounded-xl shadow-xl border-4 border-gray-300">
                 </div>
                 <div class="md:w-2/3">
                     <p class="text-lg leading-relaxed text-gray-600">
@@ -364,8 +359,8 @@
             linkedin: { url: "https://www.linkedin.com/in/anil-kumar-mandal-9b2094140/", icon: "fab fa-linkedin", text: "LinkedIn" },
             github: { url: "https://github.com/mandalanil", icon: "fab fa-github", text: "Github" },
             googleScholar: { url: "https://scholar.google.com/citations?user=Fvs_P1QAAAAJ&hl=en", icon: "fas fa-graduation-cap", text: "Google Scholar" },
-            instagram: { url: "#", icon: "fab fa-instagram", text: "Instagram" },
-            facebook: { url: "#", icon: "fab fa-facebook", text: "Facebook" }
+            instagram: { url: "https://www.instagram.com/er.mandalg/", icon: "fab fa-instagram", text: "Instagram" },
+            facebook: { url: "https://www.facebook.com/anilkumar.mandal.3956/", icon: "fab fa-facebook", text: "Facebook" }
         };
 
         // Function to create a social link HTML element
