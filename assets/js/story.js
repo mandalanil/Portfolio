@@ -58,7 +58,7 @@
     if (it.leadAuthor) h += '<span><span class="badge">Lead author</span></span>';
     if (it.authors && it.type !== "paper") h += '<span class="meta">' + esc(it.authors) + "</span>";
     if (it.venue) h += '<span class="meta">' + esc(it.venue) + "</span>";
-    if (it.summary) h += "<p>" + esc(it.summary) + "</p>";
+    if (it.summary && !(it.type === "linkedin" && it.embedUrl)) h += "<p>" + esc(it.summary) + "</p>";
 
     var links = [];
     if (it.doi) links.push('<a href="https://doi.org/' + esc(it.doi) + '" rel="noopener" target="_blank">DOI</a>');
@@ -83,7 +83,7 @@
   function renderChapters() {
     $all("[data-chapter]").forEach(function (ol) {
       var ch = ol.getAttribute("data-chapter");
-      var items = S.items.filter(function (it) { return it.chapter === ch && it.featured && visible(it); }).sort(byDateAsc);
+      var items = S.items.filter(function (it) { return it.chapter === ch && it.featured && it.type !== "paper" && visible(it); }).sort(byDateAsc);
       ol.innerHTML = items.map(function (it) { return '<li class="reveal">' + card(it) + "</li>"; }).join("");
       if (!items.length) ol.remove();
     });
@@ -137,7 +137,11 @@
   /* ---------- press & posts feed ---------- */
   function renderFeed() {
     var ul = $("[data-feed]"), more = $("[data-more]"); if (!ul) return;
-    var all = S.items.filter(function (it) { return visible(it) && it.url; }).sort(byDateDesc);
+    var all = S.items.filter(function (it) {
+      var inChapter = it.chapter && it.featured && it.type !== "paper";
+      var listedElsewhere = it.type === "paper" || it.type === "talk";
+      return visible(it) && it.url && !inChapter && !listedElsewhere;
+    }).sort(byDateDesc);
     var filter = "all", expanded = false, LIMIT = 12;
     function draw() {
       var list = all.filter(function (it) { return filter === "all" || FILTER[it.type] === filter; });
@@ -169,7 +173,7 @@
     if (Date.now() >= when.getTime()) {
       $("[data-launch-status]", el).textContent = "Public beta · live";
       $("[data-launch-title]", el).textContent = "CWR³Data launched at GIS Mela on November 17, 2026";
-      $("[data-launch-text]", el).textContent = "The public beta is open. Browse the data catalog without an account; FAU researchers can request workbench access.";
+      $("[data-launch-text]", el).textContent = "The public beta is open.";
     }
   }
 

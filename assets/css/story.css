@@ -73,6 +73,7 @@ p { margin: 0 0 1em; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .prose { max-width: 68ch; }
 .muted { color: var(--ink-muted); }
+[hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: 12px; top: -48px; background: var(--accent); color: var(--accent-ink); padding: 8px 16px; border-radius: 8px; z-index: 100; }
 .skip:focus { top: 12px; }

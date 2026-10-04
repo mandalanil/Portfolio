@@ -18,10 +18,10 @@ window.STORY = {
 
   chapters: [
     { id: "prologue", metrics: [
+      { value: "8 yrs", label: "in GIS and remote sensing, since 2018" },
       { value: "6", label: "peer-reviewed papers + 1 preprint" },
       { value: "59", label: "citations · h-index 4" },
-      { value: "12+", label: "Florida communities planned for" },
-      { value: "100+", label: "UAV mapping flights" }
+      { value: "10", label: "talks and events since 2023" }
     ]},
     { id: "ch1", metrics: [
       { value: "100+", label: "UAV flights" },
@@ -29,16 +29,13 @@ window.STORY = {
       { value: "6", label: "cereal crops modelled to 2100" },
       { value: "3", label: "countries: Nepal, Kenya, Eswatini" }
     ]},
-    { id: "ch2", metrics: [
-      { value: "1st", label: "place, FAU GIS Day 2023" },
-      { value: "$10,000", label: "USGIF Maxar Scholarship — one student nationally" },
-      { value: "Dec 2024", label: "MS conferred; PhD from Jan 2025" }
-    ]},
+    { id: "ch2" },
     { id: "ch3", metrics: [
       { value: "≤0.5%", label: "difference from SFWMD Cascade 2001 worked examples" },
       { value: "R² 0.896", label: "across 20 basin–storm combinations" },
       { value: "9.1×", label: "GPU speed-up (100.9 → 11.1 min)" },
-      { value: "48", label: "flood scenarios per region, >85% less manual work" }
+      { value: "12+", label: "Florida communities' watershed plans" },
+      { value: "48", label: "scenarios per region, >85% less manual work" }
     ]},
     { id: "ch4", metrics: [
       { value: "~100", label: "reached at World GIS Day 2025" },
@@ -46,12 +43,7 @@ window.STORY = {
       { value: "219", label: "LinkedIn followers" },
       { value: "~82 ha", label: "flood change mapped in Nepal, 11 search zones" }
     ]},
-    { id: "ch5", metrics: [
-      { value: "Nov 17", label: "2026 · public beta at GIS Mela" },
-      { value: "4", label: "tools behind one login" },
-      { value: "28", label: "built-in tutorials" },
-      { value: "150+", label: "expected at the launch" }
-    ]}
+    { id: "ch5" }
   ],
 
   items: [
@@ -77,7 +69,7 @@ window.STORY = {
       title: "Identification and GIS mapping of open spaces for humanitarian purposes",
       source: "IOM Nepal",
       url: "https://nepal.iom.int/resources/open-spaces-humanitarian-purposes-bhimeshwor-municipality",
-      summary: "Five municipal reports for the International Organization for Migration. Each credits me as the team's Photogrammetry and Remote Sensing Officer: drone-mapped open spaces that emergency responders can use after an earthquake.",
+      summary: "IOM's published reports, one per municipality, each listing me in the NAXA research team credits.",
       role: "Photogrammetry & Remote Sensing Officer (credited)", chapter: "ch1", featured: true, tags: ["UAV", "humanitarian", "report"], status: "verified",
       links: [
         { label: "Bhimeshwor", url: "https://nepal.iom.int/resources/open-spaces-humanitarian-purposes-bhimeshwor-municipality" },
@@ -161,7 +153,7 @@ window.STORY = {
       title: "Using spatial data to understand rural mobility — a step-by-step toolkit",
       source: "World Bicycle Relief · EPFL Tech4Dev · Nepal Flying Labs",
       url: "https://infoscience.epfl.ch/server/api/core/bitstreams/54081cf1-dea6-498a-94e7-f636e95d9361/content",
-      summary: "The field method from our Kenya and Nepal work, published as a practitioner toolkit; I'm credited on the PGIS team.",
+      summary: "The practitioner guide that grew out of our Kenya and Nepal fieldwork; the PGIS team credits list me.",
       role: "PGIS team (credited)", chapter: "ch1", featured: true, tags: ["toolkit", "PGIS"], status: "verified",
       links: [{ label: "EPFL project page", url: "https://www.epfl.ch/labs/ceat/en/tech4dev-participatory-gis-and-rural-mobility-2/" },
               { label: "Acknowledged in Sustainability 16(21) 9442", url: "https://www.mdpi.com/2071-1050/16/21/9442" }]
@@ -171,7 +163,7 @@ window.STORY = {
       title: "EPFL Tech4Dev × World Bicycle Relief — a participatory GIS toolkit for rural mobility",
       source: "EPFL on YouTube", url: "https://www.youtube.com/watch?v=S3dnFTKwnKM",
       embedUrl: "https://www.youtube-nocookie.com/embed/S3dnFTKwnKM", videoId: "S3dnFTKwnKM",
-      summary: "EPFL's video on the toolkit our Nepal Flying Labs team helped build and field-test.",
+      summary: "EPFL's own explainer of the toolkit, with footage from the field sites.",
       chapter: "ch1", featured: true, tags: ["video", "PGIS"], status: "verified"
     },
 
@@ -181,7 +173,7 @@ window.STORY = {
       title: "CEGE students won the Student Presentation Competition on GIS Day at FAU",
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2311-gisdayaward/",
-      summary: "Three months after arriving, I took first place with a participatory-GIS plan for sustainable urban mobility in Birendranagar, Surkhet — work I had carried from Nepal.",
+      summary: "FAU's announcement of the competition results.",
       role: "1st place", chapter: "ch2", featured: true, tags: ["award", "GIS Day"], status: "verified"
     },
     {
@@ -190,7 +182,7 @@ window.STORY = {
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2024-07-anil-usgif/",
       image: "images/story/press/2024-08-usgif.webp", imageCredit: "Photo: FAU CEGE",
-      summary: "A $10,000 award given to one student in the US, for an essay on fusing UAV imagery and LiDAR to reconstruct cities in 3D. It came with a poster at the 2025 GEOINT Symposium in St. Louis.",
+      summary: "FAU's profile of the award: $10,000, given to one student nationally, with a poster slot at the 2025 GEOINT Symposium in St. Louis. USGIF and the trade press carried the announcement too.",
       role: "Scholarship recipient", chapter: "ch2", featured: true, tags: ["award", "GEOINT"], status: "verified",
       links: [
         { label: "USGIF announcement", url: "https://usgif.org/recognizing-excellence-2024-usgif-sponsored-scholarship-recipients/" },
@@ -212,7 +204,7 @@ window.STORY = {
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2408-gisexpo",
       image: "images/story/press/2024-08-gisexpo.webp", imageCredit: "Photo: FAU CEGE",
-      summary: "Presenting a long-term analysis of climate trends and vegetation dynamics across Florida — the start of what became a 43-year study.",
+      summary: "FAU's coverage of the department's Expo presentations; mine was on long-term climate and vegetation trends in Florida.",
       role: "Presenter", talkTitle: "Long-term analysis of climate trends and vegetation dynamics in Florida", talkSource: "South Florida GIS Expo 2024", chapter: "ch2", featured: true, tags: ["talk", "climate"], status: "verified"
     },
 
@@ -232,7 +224,7 @@ window.STORY = {
       title: "New research boosts flood risk planning with smarter mapping tools",
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2506-wateshedmodeling-publication/",
-      summary: "FAU's write-up of the Natural Hazards paper.",
+      summary: "FAU's plain-language write-up of the paper.",
       chapter: "ch3", featured: true, tags: ["news", "flood risk"], status: "verified"
     },
     {
@@ -241,7 +233,7 @@ window.STORY = {
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2508-gisexpo",
       image: "images/story/press/2025-08-gisexpo.webp", imageCredit: "Photo: FAU CEGE",
-      summary: "Presenting PyWMP-Pro, our Python extension that brings scalable flood-risk mapping into ArcGIS Pro.",
+      summary: "FAU's coverage of the 2025 Expo, where I presented PyWMP-Pro, the ArcGIS Pro extension.",
       role: "Presenter", talkTitle: "PyWMP-Pro: a scalable Python extension for flood risk mapping in ArcGIS Pro", talkSource: "South Florida GIS Expo 2025", chapter: "ch3", featured: true, tags: ["talk", "PyWMP"], status: "verified"
     },
     {
@@ -259,24 +251,16 @@ window.STORY = {
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2510-anilajayawra/",
       image: "images/story/press/2025-10-awra.webp", imageCredit: "Photo: FAU CEGE",
-      summary: "Ajay Kumar Thapa and I presented PyWMP at the South Florida Water Management District: an open-source Python platform from CWR³ that supports National Flood Insurance Program work, with AI-driven calibration in development.",
+      summary: "FAU's coverage of our invited talk to the Florida section of the American Water Resources Association.",
       role: "Co-presenter", chapter: "ch3", featured: true, tags: ["news", "PyWMP"], status: "verified",
       links: [{ label: "AWRA Florida agenda", url: "https://awraflorida.org/event-6286731" }]
-    },
-    {
-      id: "pywmp-docs", type: "product", date: "2026-06",
-      title: "PyWMP — Python Watershed Modeling Platform",
-      source: "CWR³ · Florida Atlantic University",
-      url: "https://dbishal13.github.io/pywmp_documentation/",
-      summary: "The engine I lead: HEC-HMS methods and Cascade 2001 routing in one Python framework, with 1D, 2D rain-on-mesh and hybrid tiers that run on CPU or GPU, plus built-in access to public elevation, rainfall, land-cover, soil and gauge data.",
-      role: "Lead architect", chapter: "ch3", featured: true, tags: ["product", "PyWMP", "open source"], status: "verified"
     },
     {
       id: "fau-thesis-375", type: "document", date: "2026-08",
       title: "Comparative performance evaluation of a GPU-accelerated watershed model for flood inundation mapping",
       source: "FAU Digital Commons (MS thesis, M. Ali)",
       url: "https://digitalcommons.fau.edu/etd_general/375/",
-      summary: "An independent MS thesis benchmarking PyWMP's 2D rain-on-mesh solver against HEC-RAS 2D and Flood Modeller.",
+      summary: "An independent MS thesis that benchmarks PyWMP's 2D solver against HEC-RAS 2D and Flood Modeller.",
       role: "Software under evaluation", chapter: "ch3", featured: true, tags: ["validation", "PyWMP"], status: "verified",
       links: [{ label: "Related thesis: replicating an extreme South Florida rainfall event", url: "https://digitalcommons.fau.edu/etd_general/374/" }]
     },
@@ -286,7 +270,7 @@ window.STORY = {
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2026-08-gisexpo/",
       image: "images/story/press/2026-08-gisexpo.webp", imageCredit: "Photo: FAU CEGE",
-      summary: "Oral presentation of PyWMP-WEB, which puts geospatial data and watershed modelling in the browser. Three ASPRS FAU chapter members also presented.",
+      summary: "FAU's coverage of the 2026 Expo, where I presented PyWMP-WEB.",
       role: "Oral presenter", talkTitle: "PyWMP-WEB: integrating geospatial intelligence and web technologies for modern watershed management", talkSource: "South Florida GIS Expo 2026, West Palm Beach", chapter: "ch3", featured: true, tags: ["talk", "PyWMP"], status: "verified"
     },
 
@@ -318,7 +302,7 @@ window.STORY = {
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2603-fwea-fall-2025-recap",
       image: "images/story/press/2026-03-fwea-gisday.webp", imageCredit: "Photo: FAU CEGE",
-      summary: "FAU's account of the World GIS Day we co-hosted with the FWEA and FSMS student chapters on November 17, 2025.",
+      summary: "The same event as reported by FAU, from the FWEA chapter's side.",
       chapter: "ch4", featured: true, tags: ["news", "GIS Day"], status: "verified"
     },
     {
@@ -371,11 +355,11 @@ window.STORY = {
     /* ───────────── Chapter 5 · CWR³Data ───────────── */
     {
       id: "cwr3data-product", type: "product", date: "2026-09-21",
-      title: "CWR³Data — data portal and watershed modelling workbench",
-      source: "Center for Water Resiliency & Risk Reduction, FAU",
+      title: "CWR³Data at cwr3data.fau.edu",
+      source: "CWR³ · FAU",
       url: "https://cwr3data.fau.edu",
       image: "images/story/figures/ch5-cwr3data.webp", imageCredit: "Screenshot: CWR³Data",
-      summary: "The digital platform of FAU's Center for Water Resiliency & Risk Reduction, with a geospatial data portal and a hydrological modelling workbench in one browser tab. I am its developer.",
+      summary: "Live now: browse the data catalog without an account; FAU researchers can request workbench access.",
       role: "Developer", chapter: "ch5", featured: true, tags: ["product", "CWR³Data"], status: "verified"
     },
     {
@@ -394,7 +378,7 @@ window.STORY = {
       title: "CWR³Data poster — \"Discover the data, model the water, deliver the result\"",
       source: "CWR³ · FAU", url: "assets/docs/CWR3Data_poster.pdf",
       image: "images/story/figures/ch5-poster.webp",
-      summary: "The A1 poster introducing the platform's four tools.",
+      summary: "The A1 poster used to introduce the platform (PDF).",
       chapter: "ch5", featured: true, tags: ["poster", "CWR³Data"], status: "verified"
     },
 
@@ -418,22 +402,22 @@ window.STORY = {
 
   code: [
     { name: "ESTGCN", url: "https://github.com/mandalanil/ESTGCN", image: "images/story/code/estgcn.webp",
-      blurb: "Graph neural networks for rainfall–runoff prediction across five nested HUC12 basins in the Kissimmee–Okeechobee system. Hydrologic-topology graphs against proximity graphs, 72 reproducible scenarios.",
+      blurb: "Event-based training pipeline for spatio-temporal GCNs on HUC12 basins: seeded runs, a manifest per experiment, sample data for a one-minute smoke test, and CI.",
       tags: ["Python", "Keras / TensorFlow", "Hydrology"] },
     { name: "Florida climate–vegetation analysis", url: "https://github.com/mandalanil/ClimateChange", image: "images/story/code/climatechange.webp",
-      blurb: "43 years (1982–2024) of NDVI, temperature and precipitation across Florida: Theil–Sen trends, EOF decomposition and spatial regression, with a fully reproducible notebook.",
+      blurb: "Scripts and a self-contained notebook that recompute every reported number from NOAA NDVI and nClimGrid, plus fetchers for the auxiliary datasets.",
       tags: ["Python", "Remote sensing", "Spatial statistics"] },
     { name: "Semi-automated flood risk mapping", url: "https://github.com/mandalanil/Semi-Automated-workflow-for-flood-risk-mapping", icon: "flood",
-      blurb: "The ArcPy notebooks behind the Natural Hazards paper: HUC subsetting, ArcHydro, soil storage, Cascade 2001 inputs, z-score flood maps and infrastructure risk scoring.",
+      blurb: "ArcGIS Pro notebooks, map templates and a data-management guide for running the multi-scenario workflow on your own basins.",
       tags: ["ArcPy", "LiDAR DEM", "Flood risk"] },
     { name: "FloodFusion", url: "https://github.com/mandalanil/FloodFusion", live: "https://ee-kanil2310.projects.earthengine.app/view/flood-mapping", liveLabel: "Live app", icon: "satellite",
-      blurb: "An Earth Engine app that fuses Sentinel-1 SAR and Sentinel-2 imagery with a random forest to map floods, with no coding needed.",
+      blurb: "Earth Engine script behind the app: bring your own training points, tune the random forest, filter by slope and patch size, export GeoTIFFs.",
       tags: ["Earth Engine", "SAR", "Random forest"] },
     { name: "GeoAI roadmap for Nepal", url: "https://github.com/mandalanil/GeoAI_roadmap4Nepal", live: "https://mandalanil.github.io/GeoAI_roadmap4Nepal/", liveLabel: "Live report", icon: "route",
-      blurb: "An interactive policy report on how GeoAI could serve Nepal: goals, digital landscape, an invest-to-reinvest model, a SWOT analysis and a phased roadmap.",
+      blurb: "A single-page interactive report built with HTML and charts; the source and meeting notes are in the repo.",
       tags: ["GeoAI", "Policy"] },
     { name: "PyWMP documentation", url: "https://dbishal13.github.io/pywmp_documentation/", icon: "water",
-      blurb: "Public documentation for the PyWMP engine (v0.2.0) that I lead at CWR³.",
+      blurb: "Installation, model tiers and worked examples for the PyWMP engine.",
       tags: ["Docs", "Hydrology"] }
   ]
 };
