@@ -299,11 +299,18 @@ window.STORY = {
       chapter: "ch4", featured: false, tags: ["ASPRS", "event"], status: "verified"
     },
     {
-      id: "gisday-2025-linkedin", type: "linkedin", date: "2025-11-17",
-      title: "World GIS Day 2025 at FAU — recap",
-      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/showcase/asprs-floridaatlantic-chapter", embedUrl: null,
-      summary: "The chapter's own recap of World GIS Day 2025.",
-      chapter: "ch4", featured: true, tags: ["post", "GIS Day"], status: "needs-url"
+      id: "gisday-2025-linkedin", type: "linkedin", date: "2025-11-21",
+      title: "World GIS Day Celebration 2025 at Florida Atlantic University",
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7397689969357701121/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7397689969357701121", embedHeight: 680,
+      summary: "The chapter's recap: co-hosted with the FWEA and FSMS chapters and CWR³, with the student research winners and Esri's donated licenses.",
+      chapter: "ch4", featured: true, tags: ["post", "GIS Day"], status: "verified"
+    },
+    {
+      id: "gisday-2025-live-linkedin", type: "linkedin", date: "2025-11-17",
+      title: "It's World GIS Day at Florida Atlantic University",
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7396235437251428352/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7396235437251428352",
+      summary: "Posted live from the room on the day.",
+      chapter: "ch4", featured: false, tags: ["post", "GIS Day"], status: "verified"
     },
     {
       id: "fwea-recap-2026", type: "news", date: "2026-03-12",
@@ -315,33 +322,40 @@ window.STORY = {
       chapter: "ch4", featured: true, tags: ["news", "GIS Day"], status: "verified"
     },
     {
-      id: "expo-2026-linkedin", type: "linkedin", date: "2026-08-21",
-      title: "Chapter talks at South Florida GIS Expo 2026",
-      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/showcase/asprs-floridaatlantic-chapter", embedUrl: null,
-      summary: "Crop mapping in the Navajo Nation, Sentinel-1 SAR flood mapping of Fort Lauderdale, and PyWMP-WEB.",
-      chapter: "ch4", featured: true, tags: ["post", "GIS Expo"], status: "needs-url"
+      id: "expo-2026-sar-linkedin", type: "linkedin", date: "2026-08-24",
+      title: "Sentinel-1 SAR mapping of the April 2023 Fort Lauderdale flood — South Florida GIS Expo 2026",
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7497794129750306817/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7497794129750306817",
+      summary: "Chapter executive member Ajay Kumar Thapa's Expo talk on radar flood mapping with open data in Google Earth Engine.",
+      chapter: "ch4", featured: true, tags: ["post", "GIS Expo"], status: "verified"
     },
     {
-      id: "nepal-flood-linkedin", type: "linkedin", date: "2026-09",
+      id: "expo-2026-vp-linkedin", type: "linkedin", date: "2026-08-26",
+      title: "Crop mapping in the Navajo Nation — South Florida GIS Expo 2026",
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7498516658160861184/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7498516658160861184",
+      summary: "Vice President Varatharajaperumal Thangavel's Expo talk on remote-sensing crop mapping.",
+      chapter: "ch4", featured: false, tags: ["post", "GIS Expo"], status: "verified"
+    },
+    {
+      id: "nepal-flood-linkedin", type: "linkedin", date: "2026-08-28",
       title: "Nepal flash flood rapid assessment — Bhote Koshi / Trishuli corridor",
-      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/showcase/asprs-floridaatlantic-chapter", embedUrl: null,
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7498957344505110529/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7498957344505110529", embedHeight: 700,
       summary: "The chapter's public release of the rapid assessment and its free GIS layers.",
-      chapter: "ch4", featured: true, tags: ["post", "disaster response"], status: "needs-url"
+      chapter: "ch4", featured: true, tags: ["post", "disaster response"], status: "verified"
     },
     {
-      id: "board-2026-linkedin", type: "linkedin", date: "2026-09",
+      id: "board-2026-linkedin", type: "linkedin", date: "2026-08-22",
       title: "ASPRS FAU 2026–27 officer board",
-      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/showcase/asprs-floridaatlantic-chapter", embedUrl: null,
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7497047267795779584/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7497047267795779584",
       image: "images/story/events/2026-09-board.webp",
       summary: "Re-elected president alongside a six-person board. Chapter motto: \"Shaping Tomorrow Through Mapping Today.\"",
-      chapter: "ch4", featured: true, tags: ["post", "ASPRS"], status: "needs-url"
+      chapter: "ch4", featured: true, tags: ["post", "ASPRS"], status: "verified"
     },
     {
-      id: "fair-2026-linkedin", type: "linkedin", date: "2026-09-20",
+      id: "fair-2026-linkedin", type: "linkedin", date: "2026-09-18",
       title: "Campus student-organization fair",
-      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/showcase/asprs-floridaatlantic-chapter", embedUrl: null,
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7506853320079364097/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7506853320079364097",
       summary: "Hands-on laser scanners, drones and multispectral sensors for new students.",
-      chapter: "ch4", featured: false, tags: ["post", "outreach"], status: "needs-url"
+      chapter: "ch4", featured: false, tags: ["post", "outreach"], status: "verified"
     },
     {
       id: "jisrs-2026", type: "paper", date: "2026-07-17",
@@ -365,7 +379,7 @@ window.STORY = {
       role: "Developer", chapter: "ch5", featured: true, tags: ["product", "CWR³Data"], status: "verified"
     },
     {
-      id: "gismela-2026-linkedin", type: "linkedin", date: "2026-09-29",
+      id: "gismela-2026-linkedin", type: "linkedin", date: "2026-09-28",
       title: "GIS MELA 2026 | World GIS Day at FAU",
       source: "ASPRS FAU on LinkedIn",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7510477198013820928/",
