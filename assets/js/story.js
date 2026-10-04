@@ -36,47 +36,67 @@
   function byDateDesc(a, b) { return String(b.date).localeCompare(String(a.date)); }
   function byDateAsc(a, b) { return String(a.date).localeCompare(String(b.date)); }
 
-  /* ---------- evidence card ---------- */
+  /* ---------- evidence card ----------
+   * Every card has the same slots in the same order so cards in a row line up:
+   * 16:9 media (photo, video facade or generated cover) · eyebrow · 2-line title ·
+   * role row · 3-line summary · footer pinned to the bottom (links, Show post).
+   */
+  var MAX_LINKS = 2;
+
+  function linkHtml(l) {
+    return '<a href="' + esc(l.url) + '"' + linkAttrs(l.url) + ">" + esc(l.label) + (isExternal(l.url) && l.ext ? " " + icon("ext") : "") + "</a>";
+  }
+
+  function footLinks(links) {
+    if (!links.length) return "";
+    var h = '<div class="links">' + links.slice(0, MAX_LINKS).map(linkHtml).join("");
+    var rest = links.slice(MAX_LINKS);
+    if (rest.length) {
+      h += '<details class="morelinks"><summary>+' + rest.length + " more</summary><div>" + rest.map(linkHtml).join("") + "</div></details>";
+    }
+    return h + "</div>";
+  }
+
+  function media(it, k) {
+    if (it.type === "youtube" && it.videoId) {
+      return '<button class="yt media" type="button" data-yt="' + esc(it.embedUrl) + '" aria-label="Play video: ' + esc(it.title) + '">' +
+        '<img src="https://i.ytimg.com/vi/' + esc(it.videoId) + '/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">' +
+        '<span class="play" aria-hidden="true"></span></button>';
+    }
+    if (it.image) {
+      var pos = it.focal === "top" ? "center top" : it.focal === "bottom" ? "center bottom" : (it.focal || "center 30%");
+      return '<div class="media"><img src="' + esc(it.image) + '" alt="" loading="lazy" style="object-position:' + esc(pos) + '">' +
+        (it.imageCredit ? '<span class="credit">' + esc(it.imageCredit) + "</span>" : "") + "</div>";
+    }
+    return '<div class="media cover" aria-hidden="true">' + icon(k.icon) + '<span class="cover-src">' + esc(it.source) + "</span></div>";
+  }
+
   function card(it) {
     var k = KIND[it.type] || KIND.news;
     var h = '<article class="card' + (it.status !== "verified" ? " draft" : "") + '" id="item-' + esc(it.id) + '">';
-
-    if (it.type === "youtube" && it.videoId) {
-      h += '<button class="yt" type="button" data-yt="' + esc(it.embedUrl) + '" aria-label="Play video: ' + esc(it.title) + '">' +
-        '<img src="https://i.ytimg.com/vi/' + esc(it.videoId) + '/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">' +
-        '<span class="play" aria-hidden="true"></span></button>';
-    } else if (it.image) {
-      var tall = /poster|board|corridor/.test(it.image) ? " tall" : "";
-      h += '<div class="media' + tall + '"><img src="' + esc(it.image) + '" alt="" loading="lazy"></div>';
-    }
+    h += media(it, k);
 
     h += '<div class="body"><div class="eyebrow"><span class="kind">' + icon(k.icon) + esc(k.label) + "</span>" +
-      "<span>" + esc(it.source) + "</span><span>" + esc(fmtDate(it.date)) + "</span></div>";
+      '<span class="src" title="' + esc(it.source) + '">' + esc(it.source) + "</span><span>" + esc(fmtDate(it.date)) + "</span></div>";
     var title = it.url ? '<a href="' + esc(it.url) + '"' + linkAttrs(it.url) + ">" + esc(it.title) + "</a>" : esc(it.title);
-    h += "<h3>" + title + "</h3>";
-    if (it.role) h += '<span class="role">' + esc(it.role) + "</span>";
-    if (it.leadAuthor) h += '<span><span class="badge">Lead author</span></span>';
-    if (it.authors && it.type !== "paper") h += '<span class="meta">' + esc(it.authors) + "</span>";
-    if (it.venue) h += '<span class="meta">' + esc(it.venue) + "</span>";
-    if (it.summary) h += "<p>" + esc(it.summary) + "</p>";
+    h += '<h3 title="' + esc(it.title) + '">' + title + "</h3>";
+    h += '<div class="rolerow">' + (it.role ? '<span class="role">' + esc(it.role) + "</span>" : "") +
+      (it.leadAuthor ? '<span class="badge">Lead author</span>' : "") + "</div>";
+    h += '<p class="summary">' + esc(it.summary || "") + "</p>";
 
     var links = [];
-    if (it.doi) links.push('<a href="https://doi.org/' + esc(it.doi) + '" rel="noopener" target="_blank">DOI</a>');
-    (it.links || []).forEach(function (l) {
-      links.push('<a href="' + esc(l.url) + '"' + linkAttrs(l.url) + ">" + esc(l.label) + "</a>");
-    });
-    if (it.type === "linkedin" && it.url && it.status === "verified") links.push('<a href="' + esc(it.url) + '" rel="noopener" target="_blank">View on LinkedIn ' + icon("ext") + "</a>");
-    if (it.type === "youtube" && it.url) links.push('<a href="' + esc(it.url) + '" rel="noopener" target="_blank">Watch on YouTube ' + icon("ext") + "</a>");
-    if (links.length) h += '<div class="links">' + links.join("") + "</div>";
-    if (it.imageCredit && it.image) h += '<span class="credit">' + esc(it.imageCredit) + "</span>";
-    if (it.status === "needs-url") h += '<span class="draftnote">Draft: add the post URL in data/story.js</span>';
-    h += "</div>";
+    if (it.doi) links.push({ label: "DOI", url: "https://doi.org/" + it.doi });
+    (it.links || []).forEach(function (l) { links.push(l); });
+    if (it.type === "linkedin" && it.url && it.status === "verified") links.unshift({ label: "View on LinkedIn", url: it.url, ext: true });
+    if (it.type === "youtube" && it.url) links.unshift({ label: "Watch on YouTube", url: it.url, ext: true });
 
+    h += '<div class="foot">' + footLinks(links);
     if (it.type === "linkedin" && it.embedUrl) {
-      h += '<div class="embed"><button class="btn ghost showpost" type="button" aria-expanded="false" data-embed="' +
-        esc(it.embedUrl) + '" data-height="' + (it.embedHeight || 620) + '" data-title="LinkedIn post: ' + esc(it.title) + '">' +
-        icon("linkedin") + "Show post</button></div>";
+      h += '<button class="btn ghost showpost" type="button" aria-expanded="false" data-embed="' + esc(it.embedUrl) +
+        '" data-height="' + (it.embedHeight || 620) + '" data-title="LinkedIn post: ' + esc(it.title) + '">' + icon("linkedin") + "<span>Show post</span></button>";
     }
+    if (it.status === "needs-url") h += '<span class="draftnote">Draft: add the post URL in data/story.js</span>';
+    h += "</div></div>";
     return h + "</article>";
   }
 
@@ -85,6 +105,7 @@
       var ch = ol.getAttribute("data-chapter");
       var items = S.items.filter(function (it) { return it.chapter === ch && it.featured && it.type !== "paper" && visible(it); }).sort(byDateAsc);
       ol.innerHTML = items.map(function (it) { return '<li class="reveal">' + card(it) + "</li>"; }).join("");
+      ol.setAttribute("data-count", String(items.length));
       if (!items.length) ol.remove();
     });
     $all("[data-metrics]").forEach(function (ul) {
@@ -124,13 +145,13 @@
       var media = c.image
         ? '<div class="media"><img src="' + esc(c.image) + '" alt="" loading="lazy"></div>'
         : '<div class="media g' + ((g++ % 4) + 1) + '">' + icon(c.icon || "box") + "</div>";
-      var links = '<a href="' + esc(c.url) + '" rel="noopener" target="_blank">' + icon(/github\.com/.test(c.url) ? "github" : "ext") + " " +
-        (/github\.com/.test(c.url) ? "Code" : "Open") + "</a>";
-      if (c.live) links += '<a href="' + esc(c.live) + '" rel="noopener" target="_blank">' + icon("ext") + " " + esc(c.liveLabel || "Live") + "</a>";
-      return '<article class="card codecard reveal">' + media + '<div class="body"><h3><a href="' + esc(c.url) +
-        '" rel="noopener" target="_blank">' + esc(c.name) + "</a></h3><p>" + esc(c.blurb) + '</p><div class="chips">' +
+      var gh = /github\.com/.test(c.url);
+      var links = '<a href="' + esc(c.url) + '" rel="noopener" target="_blank">' + icon(gh ? "github" : "ext") + (gh ? "Code" : "Open") + "</a>";
+      if (c.live) links += '<a href="' + esc(c.live) + '" rel="noopener" target="_blank">' + icon("ext") + esc(c.liveLabel || "Live") + "</a>";
+      return '<article class="card codecard reveal">' + media + '<div class="body"><h3 title="' + esc(c.name) + '"><a href="' + esc(c.url) +
+        '" rel="noopener" target="_blank">' + esc(c.name) + '</a></h3><p class="summary">' + esc(c.blurb) + '</p><div class="chips">' +
         (c.tags || []).map(function (t) { return '<span class="chip">' + esc(t) + "</span>"; }).join("") +
-        '</div><div class="links">' + links + "</div></div></article>";
+        '</div><div class="foot"><div class="links">' + links + "</div></div></div></article>";
     }).join("");
   }
 
@@ -181,9 +202,10 @@
   function lazyEmbeds() {
     $all("[data-embed]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var box = b.parentNode, f = $("iframe", box);
+        var box = b.closest(".card"), f = $(".postframe", box);
         if (!f) {
           f = document.createElement("iframe");
+          f.className = "postframe";
           f.src = b.getAttribute("data-embed");
           f.height = b.getAttribute("data-height");
           f.title = b.getAttribute("data-title");
@@ -194,7 +216,7 @@
         }
         var open = !f.hidden;
         b.setAttribute("aria-expanded", String(open));
-        b.lastChild.textContent = open ? "Hide post" : "Show post";
+        $("span", b).textContent = open ? "Hide post" : "Show post";
       });
     });
 

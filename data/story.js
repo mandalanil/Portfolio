@@ -34,8 +34,7 @@ window.STORY = {
       { value: "≤0.5%", label: "difference from SFWMD Cascade 2001 worked examples" },
       { value: "R² 0.896", label: "across 20 basin–storm combinations" },
       { value: "9.1×", label: "GPU speed-up (100.9 → 11.1 min)" },
-      { value: "12+", label: "Florida communities' watershed plans" },
-      { value: "48", label: "scenarios per region, >85% less manual work" }
+      { value: "12+", label: "Florida communities' watershed plans" }
     ]},
     { id: "ch4", metrics: [
       { value: "~100", label: "reached at World GIS Day 2025" },
@@ -181,7 +180,7 @@ window.STORY = {
       title: "Anil Kumar Mandal receives the 2024 USGIF Maxar Scholarship for Diversity and Innovation in GEOINT",
       source: "FAU College of Engineering & Computer Science",
       url: "https://www.fau.edu/engineering/cege/news/2024-07-anil-usgif/",
-      image: "images/story/press/2024-08-usgif.webp", imageCredit: "Photo: FAU CEGE",
+      image: "images/story/press/2024-08-usgif.webp", focal: "center 18%", imageCredit: "Photo: FAU CEGE",
       summary: "FAU's profile of the award: $10,000, given to one student nationally, with a poster slot at the 2025 GEOINT Symposium in St. Louis. USGIF and the trade press carried the announcement too.",
       role: "Scholarship recipient", chapter: "ch2", featured: true, tags: ["award", "GEOINT"], status: "verified",
       links: [

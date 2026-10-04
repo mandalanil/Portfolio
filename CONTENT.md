@@ -18,9 +18,12 @@ Copy an existing item in `items: [...]` and edit it:
 | `featured` | yes | `true` shows a card in the chapter; `false` lists it in the feed only |
 | `status` | yes | `verified` shows it; `needs-url` hides it unless the page is opened with `?draft=1` |
 | `image`, `imageCredit` | no | Put images in `images/story/…` as WebP, ≤ 900 px wide, ≤ 150 KB |
+| `focal` | no | Where to crop the photo in the 16:9 card frame, as CSS `object-position` (e.g. `"center 18%"` for a portrait headshot). Default `center 30%` |
 | `embedUrl`, `embedHeight` | linkedin / youtube | See below |
 | `role`, `links[]`, `doi`, `venue`, `authors`, `leadAuthor` | no | |
 | `talkTitle`, `talkSource` | no | Use when a news item is about one of your talks |
+
+Cards all share one shape: a 16:9 picture (or a generated cover when there is no photo), a 2-line title, a 3-line summary and at most two links before "+N more". Keep summaries under about 22 words so nothing important is cut off.
 
 ## Embed a LinkedIn post
 
