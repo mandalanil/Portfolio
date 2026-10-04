@@ -362,7 +362,7 @@ window.STORY = {
       role: "Developer", links: [{ label: "Platform poster (PDF)", url: "assets/docs/CWR3Data_poster.pdf" }], chapter: "ch5", featured: true, tags: ["product", "CWR³Data"], status: "verified"
     },
     {
-      id: "gismela-2026-linkedin", type: "linkedin", date: "2026-09-28",
+      id: "gismela-2026-linkedin", type: "linkedin", date: "2026-09-28", links: [{ label: "Event page", url: "gismela2026/" }],
       title: "GIS MELA 2026 | World GIS Day at FAU",
       source: "ASPRS FAU on LinkedIn",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7510477198013820928/",

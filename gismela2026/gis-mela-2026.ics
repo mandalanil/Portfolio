@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ASPRS FAU//GIS Mela 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:20261101T020000
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gis-mela-2026@asprsfau
+DTSTAMP:20261004T120000Z
+DTSTART;TZID=America/New_York:20261117T090000
+DTEND;TZID=America/New_York:20261117T150000
+SUMMARY:GIS Mela 2026 – World GIS Day at FAU
+LOCATION:FAU Student Union\, 777 Glades Road\, Boca Raton\, FL 33431
+DESCRIPTION:A festival of data\, maps\, users and tools. Free entry\, all majors. RSVP: https://forms.cloud.microsoft/r/AUQBR20SJQ  Details: https://mandalanil.github.io/Portfolio/gismela2026/
+URL:https://mandalanil.github.io/Portfolio/gismela2026/
+END:VEVENT
+END:VCALENDAR
