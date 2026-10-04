@@ -82,10 +82,12 @@
                 <a href="#home" class="text-2xl font-bold text-gray-800">Anil<span class="text-gray-500">Mandal</span></a>
             </div>
             <!-- Desktop Navigation Links -->
-            <div class="hidden md:flex space-x-8 text-lg font-medium">
+            <div class="hidden md:flex space-x-6 text-lg font-medium">
                 <a href="#home" class="hover:text-[#0D47A1] transition-colors duration-300">Home</a>
                 <a href="#about" class="hover:text-[#0D47A1] transition-colors duration-300">About</a>
                 <a href="#experience" class="hover:text-[#0D47A1] transition-colors duration-300">Experience</a>
+                <a href="#projects" class="hover:text-[#0D47A1] transition-colors duration-300">Projects</a>
+                <a href="#leadership" class="hover:text-[#0D47A1] transition-colors duration-300">Leadership</a>
                 <a href="#skills" class="hover:text-[#0D47A1] transition-colors duration-300">Skills</a>
                 <a href="#publications" class="hover:text-[#0D47A1] transition-colors duration-300">Publications</a>
                 <a href="#contact" class="hover:text-[#0D47A1] transition-colors duration-300">Contact</a>
@@ -103,6 +105,8 @@
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Home</a>
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">About</a>
                 <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Projects</a>
+                <a href="#leadership" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Leadership</a>
                 <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Skills</a>
                 <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Publications</a>
                 <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Contact</a>
@@ -118,7 +122,7 @@
                 Anil Kumar Mandal
             </h1>
             <p class="mt-4 text-xl sm:text-2xl font-light text-gray-600">
-                Graduate Research Assistant at FAU
+                Graduate Research Assistant at FAU &middot; President, ASPRS FAU Student Chapter
             </p>
             <p class="mt-6 text-lg sm:text-xl max-w-2xl mx-auto">
                 Applying GIS, remote sensing, and LiDAR to tackle challenges in climate resilience, hydrology, and urban planning.
@@ -185,6 +189,183 @@ With a dedication to excellence and a desire to keep growing, I aim to contribut
                         <li>Created spatial dashboards for disaster resilience and energy planning.</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects section: public repositories on github.com/mandalanil -->
+    <section id="projects" class="py-16 content-section">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Projects</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Open-source research code and tools, all available on <a href="https://github.com/mandalanil" target="_blank" class="text-[#0D47A1] font-semibold hover:underline">GitHub</a>.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- ESTGCN -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
+                    <img src="images/projects/estgcn.jpg" alt="Spatial vs. topological graph representations of HUC12 watersheds" class="h-48 w-full object-cover bg-gray-100">
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-[#0D47A1]">ESTGCN</h3>
+                        <p class="text-sm text-gray-500 italic mb-3">Graph neural networks for rainfall&ndash;runoff prediction</p>
+                        <p class="text-gray-600 text-sm flex-1">Event-based spatio-temporal graph convolutional networks predicting discharge across five nested HUC12 basins in the Kissimmee River / Lake Okeechobee system. Compares hydrologic-topology graphs against k-NN proximity graphs across 72 reproducible scenarios (LSTM, GRU, RNN &times; three loss functions).</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Python</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Keras / TensorFlow</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Hydrology</span>
+                        </div>
+                        <div class="flex gap-4 mt-5 text-sm font-semibold">
+                            <a href="https://github.com/mandalanil/ESTGCN" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ClimateChange -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
+                    <img src="images/projects/climatechange.jpg" alt="Annual NDVI change across Florida, 1982-2024" class="h-48 w-full object-cover bg-gray-100">
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-[#0D47A1]">Florida Climate&ndash;Vegetation Analysis</h3>
+                        <p class="text-sm text-gray-500 italic mb-3">43 years of NDVI, temperature and precipitation (1982&ndash;2024)</p>
+                        <p class="text-gray-600 text-sm flex-1">Long-term trends in vegetation greenness across Florida from NOAA CDR NDVI and nClimGrid, using Theil&ndash;Sen / Mann&ndash;Kendall trends, EOF decomposition and spatial regression, tested against drought indices, radiation, hurricanes, ENSO and Everglades water levels. Fully reproducible notebook.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Python</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Remote Sensing</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Spatial Statistics</span>
+                        </div>
+                        <div class="flex gap-4 mt-5 text-sm font-semibold">
+                            <a href="https://github.com/mandalanil/ClimateChange" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semi-Automated Flood Risk Mapping -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
+                    <div class="h-48 w-full flex items-center justify-center bg-gradient-to-br from-[#0D47A1] to-[#42A5F5]">
+                        <i class="fas fa-house-flood-water text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-[#0D47A1]">Semi-Automated Flood Risk Mapping</h3>
+                        <p class="text-sm text-gray-500 italic mb-3">Multi-basin, multi-scenario workflow for ArcGIS Pro</p>
+                        <p class="text-gray-600 text-sm flex-1">ArcPy notebooks that automate flood modeling for Florida watershed master planning: HUC subsetting, ArcHydro preprocessing, soil storage, Cascade 2001 inputs, z-score probabilistic flood maps and infrastructure risk scoring. Handles 48 scenarios per region (rainfall, sea-level rise, tides) and cuts manual processing by over 85%.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">ArcPy</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">LiDAR DEM</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Flood Risk</span>
+                        </div>
+                        <div class="flex gap-4 mt-5 text-sm font-semibold">
+                            <a href="https://github.com/mandalanil/Semi-Automated-workflow-for-flood-risk-mapping" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FloodFusion -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
+                    <div class="h-48 w-full flex items-center justify-center bg-gradient-to-br from-[#01579B] to-[#26C6DA]">
+                        <i class="fas fa-satellite text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-[#0D47A1]">FloodFusion</h3>
+                        <p class="text-sm text-gray-500 italic mb-3">Interactive flood mapping app on Google Earth Engine</p>
+                        <p class="text-gray-600 text-sm flex-1">Fuses Sentinel-1 SAR and Sentinel-2 optical imagery with a Random Forest classifier to map flood extent. Users draw an area, bring their own training data, filter by slope and patch size, and export flooded area and GeoTIFFs &mdash; no coding required.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Earth Engine</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">SAR</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Random Forest</span>
+                        </div>
+                        <div class="flex gap-4 mt-5 text-sm font-semibold">
+                            <a href="https://github.com/mandalanil/FloodFusion" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
+                            <a href="https://ee-kanil2310.projects.earthengine.app/view/flood-mapping" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fas fa-up-right-from-square mr-1"></i>Live app</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GeoAI Roadmap for Nepal -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
+                    <div class="h-48 w-full flex items-center justify-center bg-gradient-to-br from-[#1A237E] to-[#7986CB]">
+                        <i class="fas fa-route text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-[#0D47A1]">GeoAI Roadmap for Nepal</h3>
+                        <p class="text-sm text-gray-500 italic mb-3">Interactive policy report</p>
+                        <p class="text-gray-600 text-sm flex-1">A web report on how GeoAI can shape Nepal's future: short- and long-term goals, the country's digital landscape, an &ldquo;invest to reinvest&rdquo; model, a SWOT analysis and a phased implementation roadmap.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">GeoAI</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Policy</span>
+                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">HTML</span>
+                        </div>
+                        <div class="flex gap-4 mt-5 text-sm font-semibold">
+                            <a href="https://github.com/mandalanil/GeoAI_roadmap4Nepal" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
+                            <a href="https://mandalanil.github.io/GeoAI_roadmap4Nepal/" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fas fa-up-right-from-square mr-1"></i>Live report</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More on GitHub -->
+                <a href="https://github.com/mandalanil?tab=repositories" target="_blank" class="block">
+                    <div class="h-full min-h-[16rem] bg-white rounded-xl shadow-lg p-8 flex flex-col items-center justify-center text-center transform transition-transform duration-300 hover:scale-[1.02] border border-dashed border-[#1565C0] hover:bg-gray-100">
+                        <i class="fab fa-github text-5xl text-[#0D47A1]"></i>
+                        <p class="mt-4 text-lg font-bold text-[#0D47A1]">See all repositories</p>
+                        <p class="mt-1 text-sm text-gray-500">github.com/mandalanil</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Service section -->
+    <section id="leadership" class="py-16 content-section">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Leadership &amp; Service</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8 border border-[#1565C0]">
+                <div class="md:flex md:items-center md:space-x-8">
+                    <img src="images/asprs-fau.png" alt="ASPRS FAU Student Chapter logo" class="h-24 w-auto max-w-[16rem] mx-auto md:mx-0 mb-6 md:mb-0 object-contain">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-[#0D47A1]">President, ASPRS FAU Student Chapter</h3>
+                        <p class="text-gray-500 mt-1">American Society for Photogrammetry and Remote Sensing &middot; Florida Region</p>
+                        <p class="text-gray-600 mt-3">Leading the chapter through its first full year of programming &mdash; growing it from a newly formed group into a funded chapter that connects FAU students with geospatial research, industry and the wider community.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <div class="text-3xl font-extrabold text-[#0D47A1]">~100</div>
+                        <div class="text-sm text-gray-600 mt-1">reached at World GIS Day 2025</div>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <div class="text-3xl font-extrabold text-[#0D47A1]">3</div>
+                        <div class="text-sm text-gray-600 mt-1">talks at South Florida GIS Expo 2026</div>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <div class="text-3xl font-extrabold text-[#0D47A1]">$850</div>
+                        <div class="text-sm text-gray-600 mt-1">in student research prizes</div>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <div class="text-3xl font-extrabold text-[#0D47A1]">200+</div>
+                        <div class="text-sm text-gray-600 mt-1">LinkedIn followers</div>
+                    </div>
+                </div>
+
+                <!-- Highlights: each "View post" links to the existing public post; replace the href with the specific post URL. -->
+                <ul class="mt-8 space-y-3 text-gray-700">
+                    <li><i class="fas fa-globe-americas text-[#0D47A1] w-6"></i>World GIS Day 2025 at FAU &mdash; with FWEA, FSMS and CWR3 <a data-post="gisday2025" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
+                    <li><i class="fas fa-microphone text-[#0D47A1] w-6"></i>Three chapter talks at South Florida GIS Expo 2026 <a data-post="expo2026" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
+                    <li><i class="fas fa-water text-[#0D47A1] w-6"></i>Nepal flash flood rapid assessment (Bhote Koshi&ndash;Trishuli, Aug 2026) <a data-post="nepal2026" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
+                    <li><i class="fas fa-calendar-days text-[#0D47A1] w-6"></i>GIS Mela &mdash; World GIS Day 2026, Nov 17, FAU Student Union <a data-post="gismela2026" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
+                </ul>
+
+                <div class="flex flex-wrap gap-4 mt-8 text-sm font-semibold">
+                    <a href="https://community.asprs.org/chapter-floridaatlantic" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fas fa-up-right-from-square mr-1"></i>Chapter page</a>
+                    <a href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-facebook mr-1"></i>Facebook</a>
+                </div>
+            </div>
+
+            <!-- Partner organizations -->
+            <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wider mt-12 mb-6">Organizations I work with</p>
+            <div class="flex flex-wrap justify-center items-center gap-8">
+                <img src="images/asprs-florida.png" alt="ASPRS Florida Region" class="h-16 w-auto object-contain">
+                <img src="images/fau-cwr3.png" alt="FAU Center for Water Resiliency and Risk Reduction (CWR3)" class="h-16 w-auto object-contain">
+                <img src="images/fau-geosciences.png" alt="FAU Department of Geosciences" class="h-16 w-auto object-contain">
+                <img src="images/fwea.png" alt="Florida Water Environment Association (FWEA)" class="h-16 w-auto object-contain">
+                <img src="images/fsms-fau.png" alt="FSMS FAU Student Chapter" class="h-16 w-auto object-contain">
             </div>
         </div>
     </section>
@@ -347,7 +528,7 @@ With a dedication to excellence and a desire to keep growing, I aim to contribut
 
     <!-- Footer -->
     <footer class="py-6 text-center text-gray-500 content-section">
-        <p>Created by <a href="#" class="text-[#0D47A1] hover:underline">AnilMandal</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</p>
+        <p>Created by <a href="#" class="text-[#0D47A1] hover:underline">AnilMandal</a> | <span class="far fa-copyright"></span> 2026 All rights reserved.</p>
     </footer>
 
     <!-- Simple JavaScript for navigation, scroll button, and form submission -->
