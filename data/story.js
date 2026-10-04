@@ -205,7 +205,7 @@ window.STORY = {
       url: "https://www.fau.edu/engineering/cege/news/2408-gisexpo",
       image: "images/story/press/2024-08-gisexpo.webp", imageCredit: "Photo: FAU CEGE",
       summary: "FAU's coverage of the department's Expo presentations; mine was on long-term climate and vegetation trends in Florida.",
-      role: "Presenter", talkTitle: "Long-term analysis of climate trends and vegetation dynamics in Florida", talkSource: "South Florida GIS Expo 2024", chapter: "ch2", featured: true, tags: ["talk", "climate"], status: "verified"
+      role: "Presenter", talkTitle: "Long-term analysis of climate trends and vegetation dynamics in Florida", talkSource: "South Florida GIS Expo 2024", chapter: "ch2", featured: false, tags: ["talk", "climate"], status: "verified"
     },
 
     /* ───────────── Chapter 3 · CWR³ flood modelling ───────────── */
@@ -234,7 +234,7 @@ window.STORY = {
       url: "https://www.fau.edu/engineering/cege/news/2508-gisexpo",
       image: "images/story/press/2025-08-gisexpo.webp", imageCredit: "Photo: FAU CEGE",
       summary: "FAU's coverage of the 2025 Expo, where I presented PyWMP-Pro, the ArcGIS Pro extension.",
-      role: "Presenter", talkTitle: "PyWMP-Pro: a scalable Python extension for flood risk mapping in ArcGIS Pro", talkSource: "South Florida GIS Expo 2025", chapter: "ch3", featured: true, tags: ["talk", "PyWMP"], status: "verified"
+      role: "Presenter", talkTitle: "PyWMP-Pro: a scalable Python extension for flood risk mapping in ArcGIS Pro", talkSource: "South Florida GIS Expo 2025", chapter: "ch3", featured: false, tags: ["talk", "PyWMP"], status: "verified"
     },
     {
       id: "awra-agenda-2025", type: "talk", date: "2025-10-03",
@@ -271,7 +271,7 @@ window.STORY = {
       url: "https://www.fau.edu/engineering/cege/news/2026-08-gisexpo/",
       image: "images/story/press/2026-08-gisexpo.webp", imageCredit: "Photo: FAU CEGE",
       summary: "FAU's coverage of the 2026 Expo, where I presented PyWMP-WEB.",
-      role: "Oral presenter", talkTitle: "PyWMP-WEB: integrating geospatial intelligence and web technologies for modern watershed management", talkSource: "South Florida GIS Expo 2026, West Palm Beach", chapter: "ch3", featured: true, tags: ["talk", "PyWMP"], status: "verified"
+      role: "Oral presenter", talkTitle: "PyWMP-WEB: integrating geospatial intelligence and web technologies for modern watershed management", talkSource: "South Florida GIS Expo 2026, West Palm Beach", chapter: "ch3", featured: false, tags: ["talk", "PyWMP"], status: "verified"
     },
 
     /* ───────────── Chapter 4 · ASPRS FAU ───────────── */
@@ -285,7 +285,7 @@ window.STORY = {
     {
       id: "gisday-2025-linkedin", type: "linkedin", date: "2025-11-21",
       title: "World GIS Day Celebration 2025 at Florida Atlantic University",
-      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7397689969357701121/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7397689969357701121", embedHeight: 680,
+      source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7397689969357701121/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7397689969357701121", embedHeight: 680, image: "images/story/events/2025-11-gisday-4.webp",
       summary: "The chapter's recap: co-hosted with the FWEA and FSMS chapters and CWR³, with the student research winners and Esri's donated licenses.",
       chapter: "ch4", featured: true, tags: ["post", "GIS Day"], status: "verified"
     },
@@ -303,14 +303,14 @@ window.STORY = {
       url: "https://www.fau.edu/engineering/cege/news/2603-fwea-fall-2025-recap",
       image: "images/story/press/2026-03-fwea-gisday.webp", imageCredit: "Photo: FAU CEGE",
       summary: "The same event as reported by FAU, from the FWEA chapter's side.",
-      chapter: "ch4", featured: true, tags: ["news", "GIS Day"], status: "verified"
+      chapter: "ch4", featured: false, tags: ["news", "GIS Day"], status: "verified"
     },
     {
       id: "expo-2026-sar-linkedin", type: "linkedin", date: "2026-08-24",
       title: "Sentinel-1 SAR mapping of the April 2023 Fort Lauderdale flood — South Florida GIS Expo 2026",
       source: "ASPRS FAU on LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7497794129750306817/", embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7497794129750306817",
       summary: "Chapter executive member Ajay Kumar Thapa's Expo talk on radar flood mapping with open data in Google Earth Engine.",
-      chapter: "ch4", featured: true, tags: ["post", "GIS Expo"], status: "verified"
+      chapter: "ch4", featured: false, tags: ["post", "GIS Expo"], status: "verified"
     },
     {
       id: "expo-2026-vp-linkedin", type: "linkedin", date: "2026-08-26",
@@ -360,7 +360,7 @@ window.STORY = {
       url: "https://cwr3data.fau.edu",
       image: "images/story/figures/ch5-cwr3data.webp", imageCredit: "Screenshot: CWR³Data",
       summary: "Live now: browse the data catalog without an account; FAU researchers can request workbench access.",
-      role: "Developer", chapter: "ch5", featured: true, tags: ["product", "CWR³Data"], status: "verified"
+      role: "Developer", links: [{ label: "Platform poster (PDF)", url: "assets/docs/CWR3Data_poster.pdf" }], chapter: "ch5", featured: true, tags: ["product", "CWR³Data"], status: "verified"
     },
     {
       id: "gismela-2026-linkedin", type: "linkedin", date: "2026-09-28",
@@ -379,7 +379,7 @@ window.STORY = {
       source: "CWR³ · FAU", url: "assets/docs/CWR3Data_poster.pdf",
       image: "images/story/figures/ch5-poster.webp",
       summary: "The A1 poster used to introduce the platform (PDF).",
-      chapter: "ch5", featured: true, tags: ["poster", "CWR³Data"], status: "verified"
+      chapter: "ch5", featured: false, tags: ["poster", "CWR³Data"], status: "verified"
     },
 
     /* ───────────── Epilogue · open threads ───────────── */

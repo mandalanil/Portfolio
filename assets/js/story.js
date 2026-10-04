@@ -45,7 +45,7 @@
       h += '<button class="yt" type="button" data-yt="' + esc(it.embedUrl) + '" aria-label="Play video: ' + esc(it.title) + '">' +
         '<img src="https://i.ytimg.com/vi/' + esc(it.videoId) + '/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">' +
         '<span class="play" aria-hidden="true"></span></button>';
-    } else if (it.image && !(it.type === "linkedin" && it.embedUrl)) {
+    } else if (it.image) {
       var tall = /poster|board|corridor/.test(it.image) ? " tall" : "";
       h += '<div class="media' + tall + '"><img src="' + esc(it.image) + '" alt="" loading="lazy"></div>';
     }
@@ -58,7 +58,7 @@
     if (it.leadAuthor) h += '<span><span class="badge">Lead author</span></span>';
     if (it.authors && it.type !== "paper") h += '<span class="meta">' + esc(it.authors) + "</span>";
     if (it.venue) h += '<span class="meta">' + esc(it.venue) + "</span>";
-    if (it.summary && !(it.type === "linkedin" && it.embedUrl)) h += "<p>" + esc(it.summary) + "</p>";
+    if (it.summary) h += "<p>" + esc(it.summary) + "</p>";
 
     var links = [];
     if (it.doi) links.push('<a href="https://doi.org/' + esc(it.doi) + '" rel="noopener" target="_blank">DOI</a>');
@@ -73,9 +73,9 @@
     h += "</div>";
 
     if (it.type === "linkedin" && it.embedUrl) {
-      h += '<div class="embed"><iframe data-src="' + esc(it.embedUrl) + '" height="' + (it.embedHeight || 620) +
-        '" title="LinkedIn post: ' + esc(it.title) + '" loading="lazy" allowfullscreen></iframe>' +
-        '<noscript><p class="placeholder"><a href="' + esc(it.url) + '">View the post on LinkedIn</a></p></noscript></div>';
+      h += '<div class="embed"><button class="btn ghost showpost" type="button" aria-expanded="false" data-embed="' +
+        esc(it.embedUrl) + '" data-height="' + (it.embedHeight || 620) + '" data-title="LinkedIn post: ' + esc(it.title) + '">' +
+        icon("linkedin") + "Show post</button></div>";
     }
     return h + "</article>";
   }
@@ -142,7 +142,7 @@
       var listedElsewhere = it.type === "paper" || it.type === "talk";
       return visible(it) && it.url && !inChapter && !listedElsewhere;
     }).sort(byDateDesc);
-    var filter = "all", expanded = false, LIMIT = 12;
+    var filter = "all", expanded = false, LIMIT = 6;
     function draw() {
       var list = all.filter(function (it) { return filter === "all" || FILTER[it.type] === filter; });
       var shown = expanded ? list : list.slice(0, LIMIT);
@@ -179,13 +179,24 @@
 
   /* ---------- behaviour ---------- */
   function lazyEmbeds() {
-    var frames = $all("iframe[data-src]");
-    function load(f) { if (!f.src) f.src = f.getAttribute("data-src"); }
-    if (!("IntersectionObserver" in window)) { frames.forEach(load); return; }
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } });
-    }, { rootMargin: "400px 0px" });
-    frames.forEach(function (f) { io.observe(f); });
+    $all("[data-embed]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var box = b.parentNode, f = $("iframe", box);
+        if (!f) {
+          f = document.createElement("iframe");
+          f.src = b.getAttribute("data-embed");
+          f.height = b.getAttribute("data-height");
+          f.title = b.getAttribute("data-title");
+          f.setAttribute("allowfullscreen", "");
+          box.appendChild(f);
+        } else {
+          f.hidden = !f.hidden;
+        }
+        var open = !f.hidden;
+        b.setAttribute("aria-expanded", String(open));
+        b.lastChild.textContent = open ? "Hide post" : "Show post";
+      });
+    });
 
     $all("[data-yt]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -268,6 +279,58 @@
     });
   }
 
+
+  /* ---------- reference tabs ---------- */
+  function referenceTabs() {
+    var panels = $all("[data-tabpanel]"), tabs = $all('.tablist [role="tab"]');
+    if (!panels.length || !tabs.length) return;
+    document.documentElement.classList.add("tabs-on");
+    var ids = panels.map(function (p) { return p.id; });
+    function show(id, focus) {
+      tabs.forEach(function (t) {
+        var on = t.getAttribute("aria-controls") === id;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus();
+      });
+      panels.forEach(function (p) { p.hidden = p.id !== id; });
+    }
+    function open(id) {
+      show(id);
+      $("#reference").scrollIntoView();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () {
+        var id = t.getAttribute("aria-controls");
+        show(id);
+        history.replaceState(null, "", "#" + id);
+      });
+      t.addEventListener("keydown", function (e) {
+        var k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (!k) return;
+        e.preventDefault();
+        var next = tabs[(i + k + tabs.length) % tabs.length];
+        show(next.getAttribute("aria-controls"), true);
+      });
+    });
+    // Any in-page link to a list (top bar, quick paths, chapter text) opens its tab
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute("href").slice(1);
+      if (ids.indexOf(id) < 0) return;
+      e.preventDefault();
+      history.pushState(null, "", "#" + id);
+      open(id);
+    });
+    window.addEventListener("hashchange", function () {
+      var id = location.hash.slice(1);
+      if (ids.indexOf(id) > -1) open(id);
+    });
+    var start = location.hash.slice(1);
+    if (ids.indexOf(start) > -1) open(start); else show(ids[0]);
+  }
+
   renderChapters();
   renderTalks();
   renderCode();
@@ -278,5 +341,6 @@
   scrollSpy();
   theme();
   contactForm();
+  referenceTabs();
   var y = $("[data-year]"); if (y) y.textContent = new Date().getFullYear();
 })();
