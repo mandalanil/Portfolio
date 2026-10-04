@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page moved — Anil Kumar Mandal</title>
+  <meta name="robots" content="noindex">
+  <script>
+    // Old portfolio pages → sections of the new story page
+    (function () {
+      var p = location.pathname.replace(/^\/Portfolio/, "");
+      var map = [[/^\/projects(\.html|\/)/, "#code"], [/^\/?$/, ""]];
+      for (var i = 0; i < map.length; i++) {
+        if (map[i][0].test(p)) { location.replace("/Portfolio/" + map[i][1]); return; }
+      }
+    })();
+  </script>
+  <style>
+    :root { --bg: #f7f8fa; --ink: #12192b; --muted: #4d5872; --accent: #0d47a1; color-scheme: light dark; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0d1220; --ink: #e8edf7; --muted: #a7b2c9; --accent: #7fb2ff; } }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink);
+      font: 400 18px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 16px; text-align: center; }
+    h1 { font: 600 2rem/1.2 Georgia, serif; margin: 0 0 .4em; }
+    p { color: var(--muted); }
+    a { color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>This page has moved</h1>
+    <p>The portfolio is now a single story page.</p>
+    <p><a href="/Portfolio/">Go to the portfolio →</a></p>
+  </main>
+</body>
+</html>

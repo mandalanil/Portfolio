@@ -1,671 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anil Kumar Mandal - Geo-AI Enthusiastic</title>
-    <!-- Tailwind CSS CDN for modern styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <!-- Inter font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anil Kumar Mandal — Geospatial engineer: flood modelling, GeoAI &amp; open data (FAU CWR³)</title>
+  <meta name="description" content="PhD researcher at FAU's CWR³ building PyWMP and CWR³Data for Florida watershed planning. USGIF Maxar Scholar, ASPRS FAU president, formerly GIS lead at NAXA, Nepal.">
+  <link rel="canonical" href="https://mandalanil.github.io/Portfolio/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1220" media="(prefers-color-scheme: dark)">
 
-        /* A semi-transparent overlay on the content sections for readability */
-        .content-section {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Anil Kumar Mandal — where water meets data">
+  <meta property="og:description" content="From drone mapping in Nepal to flood models and an open data platform for Florida. Geospatial engineer at FAU CWR³.">
+  <meta property="og:url" content="https://mandalanil.github.io/Portfolio/">
+  <meta property="og:image" content="https://mandalanil.github.io/Portfolio/images/story/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Anil Kumar Mandal, geospatial engineer at FAU CWR³">
+  <meta property="profile:first_name" content="Anil Kumar">
+  <meta property="profile:last_name" content="Mandal">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anil Kumar Mandal — where water meets data">
+  <meta name="twitter:image" content="https://mandalanil.github.io/Portfolio/images/story/og-cover.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d47a1'/%3E%3Cpath d='M12 40c6-6 10-6 16 0s10 6 16 0 8-4 8-4v8s-2 4-8 4-10-6-16 0-10 6-16 0z' fill='%23fff'/%3E%3Ctext x='32' y='30' font-family='Georgia' font-size='22' font-weight='700' fill='%23fff' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
 
-        /* Custom scroll-up button style */
-        .scroll-up-btn {
-            position: fixed;
-            height: 45px;
-            width: 42px;
-            background: #0D47A1;
-            /* Deep Blue */
-            right: 30px;
-            bottom: 10px;
-            text-align: center;
-            line-height: 45px;
-            color: #fff;
-            z-index: 9999;
-            font-size: 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/story.css">
+  <link rel="preload" as="image" href="images/story/hero-1280.webp" imagesrcset="images/story/hero-768.webp 768w, images/story/hero-1280.webp 1280w, images/story/hero-1920.webp 1920w" imagesizes="100vw">
 
-        .scroll-up-btn.show {
-            bottom: 30px;
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #F3F4F6;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #D1D5DB;
-            border-radius: 4px;
-        }
-    </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mandalanil.github.io/Portfolio/#me",
+        "name": "Anil Kumar Mandal",
+        "url": "https://mandalanil.github.io/Portfolio/",
+        "image": "https://mandalanil.github.io/Portfolio/images/story/headshot-600.webp",
+        "jobTitle": "Graduate Research Assistant and PhD student, geospatial engineering",
+        "email": "mailto:amandal2023@fau.edu",
+        "affiliation": { "@type": "Organization", "name": "Center for Water Resiliency and Risk Reduction (CWR³), Florida Atlantic University" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Florida Atlantic University" },
+          { "@type": "CollegeOrUniversity", "name": "Institute of Engineering, Tribhuvan University" }
+        ],
+        "award": [
+          "USGIF Maxar Scholarship for Diversity and Innovation in GEOINT (2024)",
+          "First place, FAU GIS Day Student Presentation Competition (2023)"
+        ],
+        "knowsAbout": ["GIS", "Remote sensing", "LiDAR", "UAV photogrammetry", "Flood modelling", "Hydrology", "GeoAI"],
+        "sameAs": [
+          "https://www.linkedin.com/in/anil-kumar-mandal-9b2094140/",
+          "https://github.com/mandalanil",
+          "https://scholar.google.com/citations?user=Fvs_P1QAAAAJ"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Publications",
+        "itemListElement": [
+          { "@type": "ScholarlyArticle", "position": 1, "headline": "Improving flood detection in the Himalayas: evaluating SAR–optical data fusion with machine learning in a mountainous river basin of Nepal", "datePublished": "2026-07-17", "sameAs": "https://doi.org/10.1007/s12524-026-02484-0", "isPartOf": { "@type": "Periodical", "name": "Journal of the Indian Society of Remote Sensing" }, "author": { "@id": "https://mandalanil.github.io/Portfolio/#me" } },
+          { "@type": "ScholarlyArticle", "position": 2, "headline": "Semi-automated workflow for multi-basin, multi-scenario flood risk modeling, mapping, and impact assessment", "datePublished": "2025-05-28", "sameAs": "https://doi.org/10.1007/s11069-025-07361-6", "isPartOf": { "@type": "Periodical", "name": "Natural Hazards" }, "author": { "@id": "https://mandalanil.github.io/Portfolio/#me" } },
+          { "@type": "ScholarlyArticle", "position": 3, "headline": "Geospatial tools and remote sensing strategies for timely humanitarian response: a case study on drought monitoring in Eswatini", "datePublished": "2024-01-02", "sameAs": "https://doi.org/10.3390/su16010409", "isPartOf": { "@type": "Periodical", "name": "Sustainability" }, "author": { "@id": "https://mandalanil.github.io/Portfolio/#me" } },
+          { "@type": "ScholarlyArticle", "position": 4, "headline": "Multi-level participatory GIS framework to assess mobility needs and transport barriers in rural areas", "datePublished": "2023-06-09", "sameAs": "https://doi.org/10.3390/su15129344", "isPartOf": { "@type": "Periodical", "name": "Sustainability" }, "author": { "@id": "https://mandalanil.github.io/Portfolio/#me" } },
+          { "@type": "ScholarlyArticle", "position": 5, "headline": "Climate change–driven agricultural frontiers and their ecosystem trade-offs in the hills of Nepal", "datePublished": "2023-03-14", "sameAs": "https://doi.org/10.1007/s10113-023-02043-0", "isPartOf": { "@type": "Periodical", "name": "Regional Environmental Change" }, "author": { "@id": "https://mandalanil.github.io/Portfolio/#me" } },
+          { "@type": "ScholarlyArticle", "position": 6, "headline": "Trends and geographical variation in leprosy case detection and disability in Nepal, 2010–2021", "datePublished": "2022-12-01", "sameAs": "https://doi.org/10.47276/lr.93.4.348", "isPartOf": { "@type": "Periodical", "name": "Leprosy Review" }, "author": { "@id": "https://mandalanil.github.io/Portfolio/#me" } }
+        ]
+      },
+      {
+        "@type": "Event",
+        "name": "GIS Mela 2026 — World GIS Day at FAU",
+        "startDate": "2026-11-17T09:00:00-05:00",
+        "endDate": "2026-11-17T15:00:00-05:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": { "@type": "Place", "name": "Student Union, Florida Atlantic University", "address": "Boca Raton, FL" },
+        "organizer": { "@type": "Organization", "name": "ASPRS FAU Student Chapter", "url": "https://community.asprs.org/chapter-fau/home" },
+        "description": "World GIS Day festival at FAU and the public beta launch of CWR³Data."
+      }
+    ]
+  }
+  </script>
 </head>
+<body>
+  <!-- Inline icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5 1.2 3h-2.4L12 2zm0 20-1.2-3h2.4L12 22zM2 12l3-1.2v2.4L2 12zm20 0-3 1.2v-2.4L22 12zM4.9 4.9l3 1.3-1.7 1.7-1.3-3zm14.2 14.2-3-1.3 1.7-1.7 1.3 3zm0-14.2-1.3 3-1.7-1.7 3-1.3zM4.9 19.1l1.3-3 1.7 1.7-3 1.3z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4a8.5 8.5 0 1 0 11.3 11.3z"/></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 4h13v15a1 1 0 0 0 1 1H5a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1zm15 4h2v10a2 2 0 0 1-2 2V8zM6 7v4h8V7H6zm0 6v2h8v-2H6zm0 4v1h8v-1H6z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3V9.5zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4V9.5z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6.8 9.6v3.6L12 20l6.8-3.8v-3.6L12 16.4l-6.8-3.8z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM5.3 7l6.7 4.1L18.7 7H5.3z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h8l6 6v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm7 1.5V9h5.5L13 3.5zM8 13v2h8v-2H8zm0 4v2h8v-2H8z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5V3zm2 4v2h10V7H7zm0 4v2h10v-2H7zm0 4v2h7v-2H7z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2 3 6.5v11L12 22l9-4.5v-11L12 2zm0 2.2 6.3 3.1L12 10.5 5.7 7.3 12 4.2zM5 9l6 3v7.6l-6-3V9zm8 10.6V12l6-3v7.6l-6 3z"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-8.3 8.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H6v11h11v-5h2v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-flood" viewBox="0 0 24 24"><path d="M12 3 3 10h2v3h14v-3h2l-9-7zm-2 7h4v3h-4v-3zM2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5V18c-2 0-2 1.5-4 1.5S16 18 14 18s-2 1.5-4 1.5S8 18 6 18s-2 1.5-4 1.5V17z"/></symbol>
+    <symbol id="i-satellite" viewBox="0 0 24 24"><path d="m8.5 2.6 4.2 4.2-2.1 2.1-4.2-4.2 2.1-2.1zm8.6 8.6 4.2 4.2-2.1 2.1L15 13.3l2.1-2.1zM10.6 9l4.4 4.4-2.1 2.1-4.4-4.4L10.6 9zM5 14a5 5 0 0 0 5 5v2a7 7 0 0 1-7-7h2zm0 0"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><path d="M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm12-12a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 17h0zm12-8v2a3 3 0 0 1-3 3H9a5 5 0 0 0-3.9 1.9L6 15a3 3 0 0 1 3-1h6a5 5 0 0 0 5-5V9h-2z"/></symbol>
+    <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2s7 7.5 7 12.5A7 7 0 0 1 5 14.5C5 9.5 12 2 12 2zm-3.5 12.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2z"/></symbol>
+  </svg>
 
-<body class="text-gray-800">
+  <a class="skip" href="#main">Skip to content</a>
 
-    <!-- Scroll up button, visible only when scrolled down -->
-    <div class="scroll-up-btn">
-        <i class="fas fa-angle-up"></i>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#prologue">Anil <span class="long">Kumar </span>Mandal</a>
+      <nav class="chapnav" aria-label="Chapters">
+        <a href="#ch1"><span class="num">1</span>Nepal</a>
+        <a href="#ch2"><span class="num">2</span>FAU</a>
+        <a href="#ch3"><span class="num">3</span>Flood models</a>
+        <a href="#ch4"><span class="num">4</span>ASPRS</a>
+        <a href="#ch5"><span class="num">5</span>CWR³Data</a>
+        <a href="#epilogue">Next</a>
+        <a href="#pubs">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#code">Code</a>
+        <a href="#press">Press</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="iconbtn" id="theme" type="button" aria-label="Switch colour theme">
+        <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn" href="Anil_Mandal_CV.pdf" download>CV</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ═══════════ Prologue ═══════════ -->
+    <section id="prologue" class="hero" aria-labelledby="h-prologue">
+      <picture>
+        <source type="image/webp" srcset="images/story/hero-768.webp 768w, images/story/hero-1280.webp 1280w, images/story/hero-1920.webp 1920w" sizes="100vw">
+        <img src="images/story/hero-1280.webp" alt="" width="1280" height="549" fetchpriority="high">
+      </picture>
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Geospatial engineer · Boca Raton, Florida</p>
+          <h1 id="h-prologue">Where water meets data</h1>
+          <p class="lede">I'm Anil Kumar Mandal. I turn LiDAR, satellite imagery and code into flood decisions for Florida communities, and I help build the community of people who do this work.</p>
+          <div class="roles">
+            <span>PhD researcher, FAU CWR³</span>
+            <span>President, ASPRS FAU Student Chapter</span>
+            <span>USGIF Maxar Scholar 2024</span>
+            <span>Formerly GIS &amp; RS Technical Lead, NAXA</span>
+          </div>
+          <div class="ctas">
+            <a class="btn" href="#ch1">Read the story</a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <img src="images/story/headshot-600.webp" srcset="images/story/headshot-300.webp 300w, images/story/headshot-600.webp 600w" sizes="240px" alt="Anil Kumar Mandal beside the FAU owl statue on the Boca Raton campus" width="600" height="750">
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="lanes" aria-label="Quick paths">
+        <a class="lane" href="#code">
+          <span class="who">For employers</span>
+          <h3>Tools I've built and shipped</h3>
+          <p>PyWMP, CWR³Data, open-source repositories and the CV.</p>
+        </a>
+        <a class="lane" href="#pubs">
+          <span class="who">For academic committees</span>
+          <h3>Publications and talks</h3>
+          <p>6 peer-reviewed papers, a preprint, 3 manuscripts under review, and 10 talks and events.</p>
+        </a>
+        <a class="lane" href="#ch4">
+          <span class="who">For collaborators</span>
+          <h3>Community and open data</h3>
+          <p>The ASPRS FAU chapter, GIS Mela 2026, and how to work together.</p>
+        </a>
+      </nav>
+      <p class="seen"><strong>In the news</strong>
+        <a href="https://www.fau.edu/engineering/cege/news/2024-07-anil-usgif/">FAU Engineering</a>
+        <a href="https://usgif.org/recognizing-excellence-2024-usgif-sponsored-scholarship-recipients/">USGIF</a>
+        <a href="https://lidarmag.com/2024/08/06/recognizing-excellence-2024-usgif-sponsored-scholarship-recipients/">LIDAR Magazine</a>
+        <a href="https://www.geoweeknews.com/articles/usgif-2024-scholarship-recipients-winners-geoint-geospatial-intelligence/">Geo Week News</a>
+        <a href="https://awraflorida.org/event-6286731">AWRA Florida</a>
+        <a href="https://nasalifelines.org/lifelines-gallery/geospatial-tools-and-remote-sensing-strategies-for-timely-humanitarian-response-a-case-study-on-drought-monitoring-in-eswatini/">NASA Lifelines</a>
+      </p>
+      <ul class="metrics" data-metrics="prologue"></ul>
     </div>
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <div class="flex items-center">
-                <a href="#home" class="text-2xl font-bold text-gray-800">Anil<span class="text-gray-500">Mandal</span></a>
-            </div>
-            <!-- Desktop Navigation Links -->
-            <div class="hidden md:flex space-x-6 text-lg font-medium">
-                <a href="#home" class="hover:text-[#0D47A1] transition-colors duration-300">Home</a>
-                <a href="#about" class="hover:text-[#0D47A1] transition-colors duration-300">About</a>
-                <a href="#experience" class="hover:text-[#0D47A1] transition-colors duration-300">Experience</a>
-                <a href="#projects" class="hover:text-[#0D47A1] transition-colors duration-300">Projects</a>
-                <a href="#leadership" class="hover:text-[#0D47A1] transition-colors duration-300">Leadership</a>
-                <a href="#skills" class="hover:text-[#0D47A1] transition-colors duration-300">Skills</a>
-                <a href="#publications" class="hover:text-[#0D47A1] transition-colors duration-300">Publications</a>
-                <a href="#contact" class="hover:text-[#0D47A1] transition-colors duration-300">Contact</a>
-            </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-gray-800 hover:text-[#0D47A1] focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+    <!-- ═══════════ Chapter 1 ═══════════ -->
+    <section id="ch1" class="chapter" aria-labelledby="h-ch1">
+      <div class="wrap">
+        <header class="chead">
+          <span class="numeral" aria-hidden="true">01</span>
+          <div>
+            <p class="years">Nepal · 2014 – 2023</p>
+            <h2 id="h-ch1">Mapping from the ground up</h2>
+            <p class="hook">From a geomatics degree at Tribhuvan University to leading NAXA's GIS and remote sensing team across Nepal, Kenya and Eswatini.</p>
+          </div>
+        </header>
+        <div class="story">
+          <p>I trained as a geomatics engineer at the Institute of Engineering, Tribhuvan University (BE, 2019), and joined NAXA in Kathmandu in 2018. Over five years I went from flying drones to leading the company's GIS and remote sensing work.</p>
+          <p>The work was always in service of a decision someone had to make on the ground. I mapped open spaces that emergency responders could use after an earthquake, for IOM. I modelled where six cereal crops could grow in Nepal's hills under the climate of 2060 and 2100. In Kenya I ran participatory mapping of how far rural people travel to markets and clinics, and in Eswatini I helped monitor drought from thirty years of satellite data. I also built the GIS behind Karnali Province's climate-change information system and its agro-meteorological centres, a disaster and climate resilience plan for Rapti Sonari, glacial flood-risk studies and solar-site suitability models.</p>
+          <p class="pull">More than 100 UAV flights and 50 communities taught me that a map is only useful if the people in it can act on it.</p>
         </div>
-        <!-- Mobile menu container, toggles visibility with JS -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Experience</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Projects</a>
-                <a href="#leadership" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Leadership</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Skills</a>
-                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Publications</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-300">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Home section with background image -->
-    <section id="home" class="min-h-screen flex items-center justify-center text-center py-24 text-gray-800 bg-cover bg-fixed bg-center" style="background-image: url('images/banner.jpg');">
-        <!-- Content container with a semi-transparent, rounded background -->
-        <div class="max-w-4xl mx-auto px-4 bg-white/70 backdrop-blur-md rounded-xl p-8 shadow-2xl">
-            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight">
-                Anil Kumar Mandal
-            </h1>
-            <p class="mt-4 text-xl sm:text-2xl font-light text-gray-600">
-                Graduate Research Assistant at FAU &middot; President, ASPRS FAU Student Chapter
-            </p>
-            <p class="mt-6 text-lg sm:text-xl max-w-2xl mx-auto">
-                Applying GIS, remote sensing, and LiDAR to tackle challenges in climate resilience, hydrology, and urban planning.
-            </p>
-            <!-- Call to action buttons with social links -->
-            <div id="home-social-links" class="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="bg-[#0D47A1] text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Get in Touch</a>
-                <!-- Social media links will be injected here by JavaScript -->
-            </div>
-        </div>
+        <ul class="metrics" data-metrics="ch1"></ul>
+        <ol class="timeline" data-chapter="ch1"></ol>
+      </div>
     </section>
 
-    <!-- About section -->
-    <section id="about" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">About Me</h2>
-            <div class="md:flex md:space-x-12 items-center">
-                <div class="md:w-1/3 flex justify-center mb-8 md:mb-0">
-                    <!-- NOTE: The profile image now uses a relative path from your project directory -->
-                    <img src="images/profile.png" alt="Anil Kumar Mandal" class="rounded-xl shadow-xl border-4 border-gray-300">
-                </div>
-                <div class="md:w-2/3">
-                    <p class="text-lg leading-relaxed text-gray-600">
-                        I’m Anil Kumar Mandal, a passionate and driven professional pursuing my academic and research interests at Florida Atlantic University (FAU). My work focuses on building strong foundations in engineering, problem-solving, and innovation. I enjoy tackling real-world challenges through data-driven thinking, hands-on experimentation, and continuous learning.
-With a dedication to excellence and a desire to keep growing, I aim to contribute meaningfully to impactful projects, collaborative teams, and emerging technologies.
-                    </p>
-                    <!-- NOTE: The CV download link now points to a local file -->
-                    <a href="Anil_Mandal_CV.pdf" download class="mt-6 inline-block bg-[#0D47A1] text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Download CV</a>
-                </div>
-            </div>
+    <!-- ═══════════ Chapter 2 ═══════════ -->
+    <section id="ch2" class="chapter" aria-labelledby="h-ch2">
+      <div class="wrap">
+        <header class="chead">
+          <span class="numeral" aria-hidden="true">02</span>
+          <div>
+            <p class="years">Florida Atlantic University · 2023 – 2024</p>
+            <h2 id="h-ch2">A new coast</h2>
+            <p class="hook">Arriving in Boca Raton in August 2023, and finding that the questions from Nepal travel well.</p>
+          </div>
+        </header>
+        <div class="twocol story">
+          <div>
+            <p>I came to Florida Atlantic University on a full academic scholarship for the MS–PhD track in Civil, Environmental and Geomatics Engineering, and joined the Center for Water Resiliency and Risk Reduction (CWR³) as a graduate research assistant.</p>
+            <p>Three months in, I won first place at FAU's GIS Day presentation competition with a participatory-GIS mobility plan for Birendranagar, Surkhet. The next summer I received the USGIF Maxar Scholarship for Diversity and Innovation in GEOINT, which USGIF gives to one student in the country, for work on fusing drone imagery and LiDAR to reconstruct cities in 3D.</p>
+            <p>I finished the MS in Civil Engineering (Geospatial Systems) in December 2024 and began the PhD in January 2025.</p>
+          </div>
+          <figure class="figure">
+            <img src="images/story/press/2023-11-gisday-award.webp" alt="GIS Day 2023 presentation competition winners with FAU faculty, holding certificates" width="900" height="469" loading="lazy">
+            <figcaption>FAU GIS Day 2023 competition winners. Photo: FAU CEGE.</figcaption>
+          </figure>
         </div>
+        <ul class="metrics" data-metrics="ch2"></ul>
+        <ol class="timeline" data-chapter="ch2"></ol>
+      </div>
     </section>
 
-    <!-- Professional Experience Section -->
-    <section id="experience" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Professional Experience</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!-- FAU Experience Card -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <h3 class="text-2xl font-bold text-[#0D47A1] mb-2">Graduate Research Assistant</h3>
-                    <p class="text-gray-500 mt-1">Florida Atlantic University, Boca Raton, FL</p>
-                    <p class="text-gray-400 text-sm italic mt-1">Aug 2023 – Present</p>
-                    <ul class="mt-4 list-disc list-inside space-y-2 text-gray-600">
-                        <li>Developed PyWMP-Pro: a scalable Python plugin for hydrologic simulation in ArcGIS Pro.</li>
-                        <li>Executed LiDAR and DEM-based flood modeling across South Florida municipalities.</li>
-                        <li>Supported city-scale watershed planning in Hialeah, Homestead, and North Miami.</li>
-                        <li>Designed and deployed CWR3 portal for collaborative data access.</li>
-                        <li>Presented at regional and international GIS conferences.</li>
-                    </ul>
-                </div>
-
-                <!-- NAXA Pvt. Ltd. Experience Card -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <h3 class="text-2xl font-bold text-[#0D47A1] mb-2">GIS & Remote Sensing Technical Lead</h3>
-                    <p class="text-gray-500 mt-1">NAXA Pvt. Ltd., Nepal</p>
-                    <p class="text-gray-400 text-sm italic mt-1">Sep 2018 – Jul 2023</p>
-                    <ul class="mt-4 list-disc list-inside space-y-2 text-gray-600">
-                        <li>Led GIS and climate adaptation initiatives across Nepal and Sub-Saharan Africa.</li>
-                        <li>Conducted over 100 UAV flights for terrain mapping and resource planning.</li>
-                        <li>Built and automated flood risk models using supervised and unsupervised learning.</li>
-                        <li>Produced climate crop suitability models (2060–2100) using downscaled data.</li>
-                        <li>Created spatial dashboards for disaster resilience and energy planning.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- ═══════════ Chapter 3 ═══════════ -->
+    <section id="ch3" class="chapter" aria-labelledby="h-ch3">
+      <div class="wrap">
+        <header class="chead">
+          <span class="numeral" aria-hidden="true">03</span>
+          <div>
+            <p class="years">CWR³ · 2023 – present</p>
+            <h2 id="h-ch3">Teaching computers to see water</h2>
+            <p class="hook">Making watershed master plans repeatable, from ArcPy notebooks to a GPU flood engine nine times faster.</p>
+          </div>
+        </header>
+        <div class="story">
+          <p>Florida cities plan for flooding through watershed master plans: dozens of basins, rainfall, sea-level-rise and tide scenarios, and LiDAR terrain that has to be processed the same way every time. I lead the geospatial side of these plans at CWR³ for more than 12 communities.</p>
+          <div class="chips" aria-label="Communities">
+            <span class="chip">Hialeah</span><span class="chip">Homestead</span><span class="chip">North Miami</span>
+            <span class="chip">Miami-Dade County</span><span class="chip">Broward County</span><span class="chip">Polk County</span><span class="chip">Santa Rosa County</span>
+          </div>
+          <p>The first step was automating the existing workflow in ArcGIS Pro. That work became my lead-author paper in <em>Natural Hazards</em> (2025). The second was PyWMP, a Python watershed modelling platform whose design I lead. It brings HEC-HMS methods and Cascade 2001 routing into one framework, with 1D, 2D and hybrid models that run on a CPU or a GPU. It matches the South Florida Water Management District's Cascade 2001 worked examples to within 0.5%. On a 275,617-cell model of Blackwater Creek, the GPU cut a 100-year storm run from 100.9 to 11.1 minutes.</p>
+          <p>Alongside the engineering work I study the science: graph neural networks that learn how rainfall becomes runoff across connected watersheds, and a 43-year record of how Florida's vegetation responds to its climate.</p>
         </div>
+        <ul class="metrics" data-metrics="ch3"></ul>
+        <ol class="timeline" data-chapter="ch3"></ol>
+      </div>
     </section>
 
-
-    <!-- Projects section: public repositories on github.com/mandalanil -->
-    <section id="projects" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Projects</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Open-source research code and tools, all available on <a href="https://github.com/mandalanil" target="_blank" class="text-[#0D47A1] font-semibold hover:underline">GitHub</a>.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- ESTGCN -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <img src="images/projects/estgcn.jpg" alt="Spatial vs. topological graph representations of HUC12 watersheds" class="h-48 w-full object-cover bg-gray-100">
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-xl font-bold text-[#0D47A1]">ESTGCN</h3>
-                        <p class="text-sm text-gray-500 italic mb-3">Graph neural networks for rainfall&ndash;runoff prediction</p>
-                        <p class="text-gray-600 text-sm flex-1">Event-based spatio-temporal graph convolutional networks predicting discharge across five nested HUC12 basins in the Kissimmee River / Lake Okeechobee system. Compares hydrologic-topology graphs against k-NN proximity graphs across 72 reproducible scenarios (LSTM, GRU, RNN &times; three loss functions).</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Python</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Keras / TensorFlow</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Hydrology</span>
-                        </div>
-                        <div class="flex gap-4 mt-5 text-sm font-semibold">
-                            <a href="https://github.com/mandalanil/ESTGCN" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ClimateChange -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <img src="images/projects/climatechange.jpg" alt="Annual NDVI change across Florida, 1982-2024" class="h-48 w-full object-cover bg-gray-100">
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-xl font-bold text-[#0D47A1]">Florida Climate&ndash;Vegetation Analysis</h3>
-                        <p class="text-sm text-gray-500 italic mb-3">43 years of NDVI, temperature and precipitation (1982&ndash;2024)</p>
-                        <p class="text-gray-600 text-sm flex-1">Long-term trends in vegetation greenness across Florida from NOAA CDR NDVI and nClimGrid, using Theil&ndash;Sen / Mann&ndash;Kendall trends, EOF decomposition and spatial regression, tested against drought indices, radiation, hurricanes, ENSO and Everglades water levels. Fully reproducible notebook.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Python</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Remote Sensing</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Spatial Statistics</span>
-                        </div>
-                        <div class="flex gap-4 mt-5 text-sm font-semibold">
-                            <a href="https://github.com/mandalanil/ClimateChange" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Semi-Automated Flood Risk Mapping -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <div class="h-48 w-full flex items-center justify-center bg-gradient-to-br from-[#0D47A1] to-[#42A5F5]">
-                        <i class="fas fa-house-flood-water text-6xl text-white"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-xl font-bold text-[#0D47A1]">Semi-Automated Flood Risk Mapping</h3>
-                        <p class="text-sm text-gray-500 italic mb-3">Multi-basin, multi-scenario workflow for ArcGIS Pro</p>
-                        <p class="text-gray-600 text-sm flex-1">ArcPy notebooks that automate flood modeling for Florida watershed master planning: HUC subsetting, ArcHydro preprocessing, soil storage, Cascade 2001 inputs, z-score probabilistic flood maps and infrastructure risk scoring. Handles 48 scenarios per region (rainfall, sea-level rise, tides) and cuts manual processing by over 85%.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">ArcPy</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">LiDAR DEM</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Flood Risk</span>
-                        </div>
-                        <div class="flex gap-4 mt-5 text-sm font-semibold">
-                            <a href="https://github.com/mandalanil/Semi-Automated-workflow-for-flood-risk-mapping" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FloodFusion -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <div class="h-48 w-full flex items-center justify-center bg-gradient-to-br from-[#01579B] to-[#26C6DA]">
-                        <i class="fas fa-satellite text-6xl text-white"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-xl font-bold text-[#0D47A1]">FloodFusion</h3>
-                        <p class="text-sm text-gray-500 italic mb-3">Interactive flood mapping app on Google Earth Engine</p>
-                        <p class="text-gray-600 text-sm flex-1">Fuses Sentinel-1 SAR and Sentinel-2 optical imagery with a Random Forest classifier to map flood extent. Users draw an area, bring their own training data, filter by slope and patch size, and export flooded area and GeoTIFFs &mdash; no coding required.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Earth Engine</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">SAR</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Random Forest</span>
-                        </div>
-                        <div class="flex gap-4 mt-5 text-sm font-semibold">
-                            <a href="https://github.com/mandalanil/FloodFusion" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
-                            <a href="https://ee-kanil2310.projects.earthengine.app/view/flood-mapping" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fas fa-up-right-from-square mr-1"></i>Live app</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GeoAI Roadmap for Nepal -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                    <div class="h-48 w-full flex items-center justify-center bg-gradient-to-br from-[#1A237E] to-[#7986CB]">
-                        <i class="fas fa-route text-6xl text-white"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-xl font-bold text-[#0D47A1]">GeoAI Roadmap for Nepal</h3>
-                        <p class="text-sm text-gray-500 italic mb-3">Interactive policy report</p>
-                        <p class="text-gray-600 text-sm flex-1">A web report on how GeoAI can shape Nepal's future: short- and long-term goals, the country's digital landscape, an &ldquo;invest to reinvest&rdquo; model, a SWOT analysis and a phased implementation roadmap.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">GeoAI</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">Policy</span>
-                            <span class="text-xs bg-blue-50 text-[#0D47A1] px-2 py-1 rounded-full">HTML</span>
-                        </div>
-                        <div class="flex gap-4 mt-5 text-sm font-semibold">
-                            <a href="https://github.com/mandalanil/GeoAI_roadmap4Nepal" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-github mr-1"></i>Code</a>
-                            <a href="https://mandalanil.github.io/GeoAI_roadmap4Nepal/" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fas fa-up-right-from-square mr-1"></i>Live report</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More on GitHub -->
-                <a href="https://github.com/mandalanil?tab=repositories" target="_blank" class="block">
-                    <div class="h-full min-h-[16rem] bg-white rounded-xl shadow-lg p-8 flex flex-col items-center justify-center text-center transform transition-transform duration-300 hover:scale-[1.02] border border-dashed border-[#1565C0] hover:bg-gray-100">
-                        <i class="fab fa-github text-5xl text-[#0D47A1]"></i>
-                        <p class="mt-4 text-lg font-bold text-[#0D47A1]">See all repositories</p>
-                        <p class="mt-1 text-sm text-gray-500">github.com/mandalanil</p>
-                    </div>
-                </a>
-            </div>
+    <!-- ═══════════ Chapter 4 ═══════════ -->
+    <section id="ch4" class="chapter" aria-labelledby="h-ch4">
+      <div class="wrap">
+        <header class="chead">
+          <span class="numeral" aria-hidden="true">04</span>
+          <div>
+            <p class="years">ASPRS FAU Student Chapter · August 2024 – present</p>
+            <h2 id="h-ch4">Building a room for geospatial people</h2>
+            <p class="hook">The chapter formed in August 2024. A year later it was funded, had more than 200 followers, and was sending free flood data to Nepal.</p>
+          </div>
+        </header>
+        <div class="story">
+          <p>I have been president of the FAU student chapter of the American Society for Photogrammetry and Remote Sensing since it was chartered in August 2024, and was re-elected for 2026–27. The first year was spent setting up: Geo Week in Denver, the FL-ASPRS booth at the South Florida GIS Expo, and putting laser scanners, drones and multispectral sensors in front of first-year students at the Owl Involved fair.</p>
+          <p>In the second year the chapter ran its first large event. World GIS Day, on November 17, 2025, was co-hosted with the FWEA and FSMS student chapters and CWR³. It brought in about 100 people, with faculty and industry talks from FDOT, CDM Smith, Caulfield &amp; Wheeler and Digital E Consulting. A student research competition paid out $850 in prizes, and Esri donated three software licenses.</p>
         </div>
+        <div class="gallery" role="group" aria-label="World GIS Day 2025 at FAU">
+          <figure><img src="images/story/events/2025-11-gisday-1.webp" alt="Speakers, organisers and attendees of World GIS Day 2025 at FAU in a group photo" width="1100" height="825" loading="lazy"></figure>
+          <figure><img src="images/story/events/2025-11-gisday-2.webp" alt="Audience during a talk at World GIS Day 2025" width="1100" height="825" loading="lazy"></figure>
+          <figure><img src="images/story/events/2025-11-gisday-3.webp" alt="Attendees and the sponsor table in the event hall" width="1100" height="825" loading="lazy"></figure>
+          <figure><img src="images/story/events/2025-11-gisday-4.webp" alt="Prize winners lined up in front of the World GIS Day 2025 slide" width="1100" height="825" loading="lazy"></figure>
+          <figure><img src="images/story/events/2025-11-gisday-5.webp" alt="A student research prize being presented" width="1100" height="825" loading="lazy"></figure>
+          <figcaption>World GIS Day 2025, FAU Boca Raton. Photos: ASPRS FAU Student Chapter.</figcaption>
+        </div>
+        <div class="twocol story">
+          <div>
+            <h3>Back to Nepal</h3>
+            <p>On August 26, 2026, a dam breach on the Lhende Khola sent a flash flood down Nepal's Bhote Koshi–Trishuli corridor. It destroyed bridges, roads, a border post and six hydropower plants. Within days our chapter compared before-and-after Sentinel-2 and PlanetScope imagery along about 60 km of the river and mapped roughly 82 hectares of changed ground. We ranked 11 candidate search zones and released the layers free to the teams working there.</p>
+            <p>The method came from the SAR and optical flood-mapping research behind FloodFusion and our 2026 Himalayan flood-detection paper. Nepal to Florida and back to Nepal.</p>
+          </div>
+          <figure class="figure">
+            <img src="images/story/figures/ch4-nepal-corridor.webp" alt="Map of the Bhote Koshi–Trishuli corridor with candidate search zones" width="1240" height="1753" loading="lazy">
+            <figcaption>Rapid assessment: candidate search zones along the corridor. Imagery: Copernicus Sentinel-2, Planet Labs PBC disaster release.</figcaption>
+          </figure>
+        </div>
+        <ul class="metrics" data-metrics="ch4"></ul>
+        <ol class="timeline" data-chapter="ch4"></ol>
+        <p class="muted" style="margin-top:24px">Follow the chapter:
+          <a href="https://community.asprs.org/chapter-fau/home">ASPRS chapter page</a> ·
+          <a href="https://www.linkedin.com/showcase/asprs-floridaatlantic-chapter">LinkedIn</a> ·
+          <a href="https://www.facebook.com/asprs.floridaatlantic.chapter">Facebook</a> ·
+          <a href="https://www.instagram.com/fau_asprs/">Instagram</a>
+        </p>
+        <div class="logos" aria-label="Partner organisations">
+          <img src="images/story/logos/asprs-fau.png" alt="ASPRS FAU Student Chapter" loading="lazy">
+          <img src="images/story/logos/asprs-florida.png" alt="ASPRS Florida Region" loading="lazy">
+          <img src="images/story/logos/fau-cwr3.png" alt="FAU Center for Water Resiliency and Risk Reduction" loading="lazy">
+          <img src="images/story/logos/fau-geosciences.png" alt="FAU Department of Geosciences" loading="lazy">
+          <img src="images/story/logos/fwea.png" alt="Florida Water Environment Association" loading="lazy">
+          <img src="images/story/logos/fsms-fau.png" alt="FSMS FAU Student Chapter" loading="lazy">
+        </div>
+      </div>
     </section>
 
-    <!-- Leadership & Service section -->
-    <section id="leadership" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Leadership &amp; Service</h2>
-            <div class="bg-white rounded-xl shadow-lg p-8 border border-[#1565C0]">
-                <div class="md:flex md:items-center md:space-x-8">
-                    <img src="images/asprs-fau.png" alt="ASPRS FAU Student Chapter logo" class="h-24 w-auto max-w-[16rem] mx-auto md:mx-0 mb-6 md:mb-0 object-contain">
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-[#0D47A1]">President, ASPRS FAU Student Chapter</h3>
-                        <p class="text-gray-500 mt-1">American Society for Photogrammetry and Remote Sensing &middot; Florida Region</p>
-                        <p class="text-gray-600 mt-3">Leading the chapter through its first full year of programming &mdash; growing it from a newly formed group into a funded chapter that connects FAU students with geospatial research, industry and the wider community.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
-                    <div class="bg-blue-50 rounded-lg p-4">
-                        <div class="text-3xl font-extrabold text-[#0D47A1]">~100</div>
-                        <div class="text-sm text-gray-600 mt-1">reached at World GIS Day 2025</div>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4">
-                        <div class="text-3xl font-extrabold text-[#0D47A1]">3</div>
-                        <div class="text-sm text-gray-600 mt-1">talks at South Florida GIS Expo 2026</div>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4">
-                        <div class="text-3xl font-extrabold text-[#0D47A1]">$850</div>
-                        <div class="text-sm text-gray-600 mt-1">in student research prizes</div>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4">
-                        <div class="text-3xl font-extrabold text-[#0D47A1]">200+</div>
-                        <div class="text-sm text-gray-600 mt-1">LinkedIn followers</div>
-                    </div>
-                </div>
-
-                <!-- Highlights: each "View post" links to the existing public post; replace the href with the specific post URL. -->
-                <ul class="mt-8 space-y-3 text-gray-700">
-                    <li><i class="fas fa-globe-americas text-[#0D47A1] w-6"></i>World GIS Day 2025 at FAU &mdash; with FWEA, FSMS and CWR3 <a data-post="gisday2025" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
-                    <li><i class="fas fa-microphone text-[#0D47A1] w-6"></i>Three chapter talks at South Florida GIS Expo 2026 <a data-post="expo2026" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
-                    <li><i class="fas fa-water text-[#0D47A1] w-6"></i>Nepal flash flood rapid assessment (Bhote Koshi&ndash;Trishuli, Aug 2026) <a data-post="nepal2026" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
-                    <li><i class="fas fa-calendar-days text-[#0D47A1] w-6"></i>GIS Mela &mdash; World GIS Day 2026, Nov 17, FAU Student Union <a data-post="gismela2026" href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] text-sm font-semibold hover:underline ml-1">View post &rarr;</a></li>
-                </ul>
-
-                <div class="flex flex-wrap gap-4 mt-8 text-sm font-semibold">
-                    <a href="https://community.asprs.org/chapter-floridaatlantic" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fas fa-up-right-from-square mr-1"></i>Chapter page</a>
-                    <a href="https://www.facebook.com/asprs.floridaatlantic.chapter" target="_blank" class="text-[#0D47A1] hover:underline"><i class="fab fa-facebook mr-1"></i>Facebook</a>
-                </div>
-            </div>
-
-            <!-- Partner organizations -->
-            <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wider mt-12 mb-6">Organizations I work with</p>
-            <div class="flex flex-wrap justify-center items-center gap-8">
-                <img src="images/asprs-florida.png" alt="ASPRS Florida Region" class="h-16 w-auto object-contain">
-                <img src="images/fau-cwr3.png" alt="FAU Center for Water Resiliency and Risk Reduction (CWR3)" class="h-16 w-auto object-contain">
-                <img src="images/fau-geosciences.png" alt="FAU Department of Geosciences" class="h-16 w-auto object-contain">
-                <img src="images/fwea.png" alt="Florida Water Environment Association (FWEA)" class="h-16 w-auto object-contain">
-                <img src="images/fsms-fau.png" alt="FSMS FAU Student Chapter" class="h-16 w-auto object-contain">
-            </div>
+    <!-- ═══════════ Chapter 5 ═══════════ -->
+    <section id="ch5" class="chapter" aria-labelledby="h-ch5">
+      <div class="wrap">
+        <header class="chead">
+          <span class="numeral" aria-hidden="true">05</span>
+          <div>
+            <p class="years">CWR³Data · 2025 – 2026</p>
+            <h2 id="h-ch5">One door to the data</h2>
+            <p class="hook">Everything the lab learned about watershed data, in one platform, with a public beta at GIS Mela.</p>
+          </div>
+        </header>
+        <div class="story">
+          <p>Each watershed plan began with the same search for elevation, rainfall, soils and gauge records in a dozen places, and ended with results that were hard to share. CWR³Data is my answer: the digital platform of FAU's Center for Water Resiliency and Risk Reduction. It puts a geospatial data portal and a hydrological modelling workbench in one browser tab.</p>
         </div>
+        <ul class="pillars">
+          <li><strong>Data Catalog</strong><span>Search, preview and request Florida water data, with standard metadata.</span></li>
+          <li><strong>PyWMP-WEB</strong><span>1D, 2D and hybrid flood models in the browser, running on the GPU.</span></li>
+          <li><strong>AeroFuse</strong><span>Drone imagery and 3DEP LiDAR turned into terrain models, orthophotos and change maps.</span></li>
+          <li><strong>Notebooks</strong><span>GeoAI on the GPU, next to the data.</span></li>
+        </ul>
+        <div class="launch" id="launch" data-launch="2026-11-17">
+          <p class="status" data-launch-status>Public beta · launching</p>
+          <h3 data-launch-title>CWR³Data goes public at GIS Mela, November 17, 2026</h3>
+          <p data-launch-text>GIS Mela is World GIS Day at FAU: a one-day festival of maps, data and the people who make them, held 9 AM–3 PM at the Student Union. The CWR³Data public beta launches there.</p>
+          <a class="btn" href="https://cwr3data.fau.edu">Open CWR³Data</a>
+          <a class="btn ghost" href="#item-gismela-2026-linkedin">See the announcement</a>
+        </div>
+        <ul class="metrics" data-metrics="ch5"></ul>
+        <ol class="timeline" data-chapter="ch5"></ol>
+      </div>
     </section>
 
-
-    <!-- Skills section -->
-    <section id="skills" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">My Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
-                <!-- Skill Card -->
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-satellite text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">Remote Sensing</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-map-marked-alt text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">GIS</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-fighter-jet text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">UAV</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-mountain text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">LiDAR</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fab fa-python text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">Python</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-globe text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">Google Earth Engine</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-water text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">Hydrologic Analysis</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.05] border border-[#1565C0] hover:bg-gray-100">
-                    <i class="fas fa-chart-line text-4xl text-[#0D47A1]"></i>
-                    <p class="mt-4 text-gray-700 font-semibold">Spatial Analytics & ML</p>
-                </div>
-            </div>
+    <!-- ═══════════ Epilogue ═══════════ -->
+    <section id="epilogue" class="chapter" aria-labelledby="h-epilogue">
+      <div class="wrap">
+        <header class="chead">
+          <span class="numeral" aria-hidden="true">→</span>
+          <div>
+            <p class="years">2026 and onward</p>
+            <h2 id="h-epilogue">Open threads</h2>
+            <p class="hook">Three research questions I'm still working on, and an invitation to work on them together.</p>
+          </div>
+        </header>
+        <div class="story">
+          <p><strong>Can a model learn the river network?</strong> ESTGCN encodes the upstream–downstream topology of HUC12 watersheds into a graph neural network, and asks whether it beats a graph built only from distance. So far it does. <a href="https://github.com/mandalanil/ESTGCN">Code</a> · manuscript under review.</p>
+          <p><strong>How is Florida's green changing?</strong> A 43-year analysis of NDVI against temperature and precipitation, separating long-term climate signals from hurricanes and drought. <a href="https://github.com/mandalanil/ClimateChange">Code</a> · manuscript under review.</p>
+          <p><strong>Can one open framework do 1D, 2D and hybrid flood modelling?</strong> The PyWMP framework paper. Manuscript under review.</p>
+          <p>Outside hydrology, I'm applying the same spatial methods to Nepal's digital election readiness (SSRN preprint, 2026). If you're hiring, recruiting a postdoc, or want to build something with open water data, <a href="#contact">get in touch</a>.</p>
         </div>
+        <ol class="timeline" data-chapter="epilogue"></ol>
+      </div>
     </section>
 
-    <!-- Publications section -->
-    <section id="publications" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Publications</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- NOTE: Replace '#' and the hrefs with the actual publication links -->
-                <!-- Publication Card 1 -->
-                <a href="https://www.mdpi.com/2071-1050/16/1/409" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                        <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
-                        <h3 class="text-lg font-bold text-[#0D47A1]">Geospatial Tools for Drought Monitoring</h3>
-                        <p class="text-sm text-gray-500 italic">Sustainability, 2024</p>
-                        <p class="mt-2 text-gray-600 text-sm">A case study on drought monitoring in Eswatini using geospatial tools and remote sensing strategies.</p>
-                    </div>
-                </a>
-                <!-- Publication Card 2 -->
-                <a href="https://www.mdpi.com/2071-1050/15/12/9344" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                        <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
-                        <h3 class="text-lg font-bold text-[#0D47A1]">Multi-level Participatory GIS Framework</h3>
-                        <p class="text-sm text-gray-500 italic">Sustainability, 2023</p>
-                        <p class="mt-2 text-gray-600 text-sm">Assessing mobility needs and transport barriers in rural areas with a case study in Kenya.</p>
-                    </div>
-                </a>
-                <!-- Publication Card 3 -->
-                <a href="https://link.springer.com/article/10.1007/s10113-023-02043-0" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                        <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
-                        <h3 class="text-lg font-bold text-[#0D47A1]">Agricultural Frontiers & Ecosystem Trade-offs</h3>
-                        <p class="text-sm text-gray-500 italic">Regional Environmental Change, 2023</p>
-                        <p class="mt-2 text-gray-600 text-sm">Research on climate change–driven agricultural frontiers and their ecosystem impacts in Nepal.</p>
-                    </div>
-                </a>
-                <!-- Publication Card 4 -->
-                <a href="https://leprosyreview.org/article/93/4/20-22071" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                        <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
-                        <h3 class="text-lg font-bold text-[#0D47A1]">Leprosy Detection & Disability Trends</h3>
-                        <p class="text-sm text-gray-500 italic">Leprosy Review, 2022</p>
-                        <p class="mt-2 text-gray-600 text-sm">An analysis of trends and geographical variation in leprosy case detection in Nepal.</p>
-                    </div>
-                </a>
-                <!-- Publication Card 5 -->
-                <a href="#" target="_blank" class="block">
-                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition-transform duration-300 hover:scale-[1.02] border border-[#1565C0]">
-                        <i class="fas fa-book-open text-2xl text-[#0D47A1] mb-3"></i>
-                        <h3 class="text-lg font-bold text-[#0D47A1]">Semi-automated Flood Risk Modeling</h3>
-                        <p class="text-sm text-gray-500 italic">Natural Hazards, 2025</p>
-                        <p class="mt-2 text-gray-600 text-sm">A study on semi-automated flood risk modeling and climate change adaptation strategies.</p>
-                    </div>
-                </a>
-            </div>
+    <!-- ═══════════ Publications ═══════════ -->
+    <section id="pubs" class="appendix alt" aria-labelledby="h-pubs">
+      <div class="wrap">
+        <div class="sectionhead">
+          <h2 id="h-pubs">Publications</h2>
+          <a class="btn ghost" href="https://scholar.google.com/citations?user=Fvs_P1QAAAAJ&amp;hl=en"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar</a>
         </div>
+        <p class="subhead">Peer-reviewed</p>
+        <ol class="publist">
+          <li><span class="yr">2026</span><div><div class="t">Improving flood detection in the Himalayas: evaluating SAR–optical data fusion with machine learning in a mountainous river basin of Nepal</div><div class="a">Rijal, S., et al., <strong>Mandal, A.K.</strong>, Parajuli, R.</div><div class="v"><em>Journal of the Indian Society of Remote Sensing</em> 54(10), 3917–3930</div></div><div class="acts"><a href="https://doi.org/10.1007/s12524-026-02484-0">DOI 10.1007/s12524-026-02484-0</a></div></li>
+          <li><span class="yr">2025</span><div><div class="t">Semi-automated workflow for multi-basin, multi-scenario flood risk modeling, mapping, and impact assessment</div><div class="a"><strong>Mandal, A.K.</strong>, Thapa Chhetri, M., Bloetscher, F., Yong, Y., Su, H.</div><div class="v"><em>Natural Hazards</em> 121(12), 14425–14441</div></div><div class="acts"><span class="badge">Lead author</span><a href="https://doi.org/10.1007/s11069-025-07361-6">DOI 10.1007/s11069-025-07361-6</a><a href="https://github.com/mandalanil/Semi-Automated-workflow-for-flood-risk-mapping">Code</a><a href="https://www.fau.edu/engineering/cege/news/2506-wateshedmodeling-publication/">FAU news</a></div></li>
+          <li><span class="yr">2024</span><div><div class="t">Geospatial tools and remote sensing strategies for timely humanitarian response: a case study on drought monitoring in Eswatini</div><div class="a">Munyaka, J.C.B., Chenal, J., Mabaso, S., Tfwala, S.S., <strong>Mandal, A.K.</strong></div><div class="v"><em>Sustainability</em> 16(1), 409</div></div><div class="acts"><a href="https://doi.org/10.3390/su16010409">DOI 10.3390/su16010409</a><a href="https://nasalifelines.org/lifelines-gallery/geospatial-tools-and-remote-sensing-strategies-for-timely-humanitarian-response-a-case-study-on-drought-monitoring-in-eswatini/">NASA Lifelines</a></div></li>
+          <li><span class="yr">2023</span><div><div class="t">Multi-level participatory GIS framework to assess mobility needs and transport barriers in rural areas: a case study of rural Mumias East, Kakamega, Kenya</div><div class="a">Munyaka, J.C.B., Chenal, J., de Roulet, P., <strong>Mandal, A.K.</strong>, Pudasaini, U., Otieno, N.O.</div><div class="v"><em>Sustainability</em> 15(12), 9344</div></div><div class="acts"><a href="https://doi.org/10.3390/su15129344">DOI 10.3390/su15129344</a></div></li>
+          <li><span class="yr">2023</span><div><div class="t">Climate change–driven agricultural frontiers and their ecosystem trade-offs in the hills of Nepal</div><div class="a">KC, K.B., Tzadok, E., <strong>Mandal, A.K.</strong></div><div class="v"><em>Regional Environmental Change</em> 23(2), 50</div></div><div class="acts"><a href="https://doi.org/10.1007/s10113-023-02043-0">DOI 10.1007/s10113-023-02043-0</a></div></li>
+          <li><span class="yr">2022</span><div><div class="t">Trends and geographical variation in leprosy case detection and disability in Nepal, 2010–2021</div><div class="a">Taal, A.T., et al., <strong>Kumar, A.</strong>, et al.</div><div class="v"><em>Leprosy Review</em> 93(4), 348–363</div></div><div class="acts"><a href="https://leprosyreview.org/article/93/4/20-22071">Article</a></div></li>
+        </ol>
+        <p class="subhead">Preprint &amp; conference</p>
+        <ol class="publist">
+          <li><span class="yr">2026</span><div><div class="t">Mapping digital election readiness in Nepal: a municipal-level composite index, spatial autocorrelation analysis, and evidence-based e-voting policy framework</div><div class="a"><strong>Mandal, A.</strong>, Sharma, A., Bastola, D., Thapa, A., Su, H., Yong, Y., Bloetscher, F.</div><div class="v">SSRN preprint</div></div><div class="acts"><span class="badge">Lead author</span><a href="https://doi.org/10.2139/ssrn.7364879">DOI 10.2139/ssrn.7364879</a></div></li>
+          <li><span class="yr">2023</span><div><div class="t">Usafiri: an open-source GIS-based participatory mapping tool to assist transport need assessment in rural communities</div><div class="a">Oli, U., Pudasaini, U., Tandukar, N., <strong>Mandal, A.</strong></div><div class="v">FIG Commission 7 &amp; 2 Annual Meeting, Deventer</div></div><div class="acts"><a href="https://fig.net/resources/proceedings/fig_proceedings/7_2023/papers/se06/SE06_oli_pudasaini_et_al_12353_abs.pdf">Abstract</a></div></li>
+        </ol>
+        <p class="subhead">Under review</p>
+        <ol class="publist">
+          <li><span class="yr">—</span><div><div class="t">PyWMP: a unified Python framework for multi-fidelity 1D, 2D and hybrid event-based flood modeling</div><div class="a"><strong>Mandal, A.K.</strong>, et al.</div></div></li>
+          <li><span class="yr">—</span><div><div class="t">Event-based spatio-temporal graph convolutional networks for rainfall–runoff prediction in HUC12 watersheds</div><div class="a"><strong>Mandal, A.K.</strong>, et al.</div></div><div class="acts"><a href="https://github.com/mandalanil/ESTGCN">Code</a></div></li>
+          <li><span class="yr">—</span><div><div class="t">Spatial divergence of climate–vegetation relationships in Florida: a 43-year multi-scale analysis (1982–2024)</div><div class="a"><strong>Mandal, A.K.</strong>, et al.</div></div><div class="acts"><a href="https://github.com/mandalanil/ClimateChange">Code</a></div></li>
+        </ol>
+      </div>
     </section>
 
-    <!-- Contact section -->
-    <section id="contact" class="py-16 content-section">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Contact Me</h2>
-            <div class="md:flex md:space-x-12">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="text-xl font-semibold text-[#0D47A1] mb-4">Get in Touch</div>
-                    <p class="text-gray-600 leading-relaxed">I'm open to connecting with people who share similar interests and am excited about collaborating on real-world projects or research. Let's explore opportunities together!</p>
-                    <div class="mt-8 space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-user text-2xl text-[#0D47A1]"></i>
-                            <div>
-                                <div class="text-gray-500 text-sm font-semibold">Name</div>
-                                <div class="text-gray-800">Anil Kumar Mandal</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-map-marker-alt text-2xl text-[#0D47A1]"></i>
-                            <div>
-                                <div class="text-gray-500 text-sm font-semibold">Address</div>
-                                <div class="text-gray-800">602 NW 13th St Apt 38, Boca Raton, FL 33486</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-envelope text-2xl text-[#0D47A1]"></i>
-                            <div>
-                                <div class="text-gray-500 text-sm font-semibold">Email</div>
-                                <div class="text-gray-800">amandal2023@fau.edu</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Social Media Links -->
-                    <div class="mt-8">
-                        <div class="text-xl font-semibold text-[#0D47A1] mb-4">Find me on social media</div>
-                        <div id="contact-social-links" class="flex flex-wrap gap-4">
-                            <!-- Social media links will be injected here by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <div class="text-xl font-semibold text-[#0D47A1] mb-4">Message me</div>
-                    <!-- Formspree form for direct contact. NOTE: Replace the action URL with your own Formspree endpoint. -->
-                    <form id="contact-form" action="https://formspree.io/f/xovlzqjo" method="POST" class="space-y-4">
-                        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                        <input type="email" name="_replyto" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                        <input type="text" name="_subject" placeholder="Subject" required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                        <textarea name="message" cols="30" rows="6" placeholder="Your Message..." required class="w-full p-3 rounded-lg bg-gray-200 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1565C0]"></textarea>
-                        <button type="submit" class="w-full bg-[#0D47A1] text-white p-3 rounded-lg font-semibold shadow-lg hover:bg-[#1565C0] transition-colors duration-300">Send Message</button>
-                    </form>
-                    <!-- Success message container for Formspree submission -->
-                    <div id="form-status" class="mt-4 text-center text-green-600 font-semibold hidden">
-                        Thank you! Your message has been sent.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- ═══════════ Talks ═══════════ -->
+    <section id="talks" class="appendix" aria-labelledby="h-talks">
+      <div class="wrap">
+        <div class="sectionhead"><h2 id="h-talks">Talks &amp; events</h2></div>
+        <ul class="talks" data-talks></ul>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-6 text-center text-gray-500 content-section">
-        <p>Created by <a href="#" class="text-[#0D47A1] hover:underline">AnilMandal</a> | <span class="far fa-copyright"></span> 2026 All rights reserved.</p>
-    </footer>
+    <!-- ═══════════ Code ═══════════ -->
+    <section id="code" class="appendix alt" aria-labelledby="h-code">
+      <div class="wrap">
+        <div class="sectionhead">
+          <h2 id="h-code">Open source &amp; tools</h2>
+          <a class="btn ghost" href="https://github.com/mandalanil"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>github.com/mandalanil</a>
+        </div>
+        <div class="grid3" data-code></div>
+      </div>
+    </section>
 
-    <!-- Simple JavaScript for navigation, scroll button, and form submission -->
-    <script>
-        // Define social media links and icons in a single object for reusability
-        const socialLinks = {
-            linkedin: { url: "https://www.linkedin.com/in/anil-kumar-mandal-9b2094140/", icon: "fab fa-linkedin", text: "LinkedIn" },
-            github: { url: "https://github.com/mandalanil", icon: "fab fa-github", text: "Github" },
-            googleScholar: { url: "https://scholar.google.com/citations?user=Fvs_P1QAAAAJ&hl=en", icon: "fas fa-graduation-cap", text: "Google Scholar" },
-            instagram: { url: "https://www.instagram.com/er.mandalg/", icon: "fab fa-instagram", text: "Instagram" },
-            facebook: { url: "https://www.facebook.com/anilkumar.mandal.3956/", icon: "fab fa-facebook", text: "Facebook" }
-        };
+    <!-- ═══════════ Press & posts ═══════════ -->
+    <section id="press" class="appendix" aria-labelledby="h-press">
+      <div class="wrap">
+        <div class="sectionhead">
+          <h2 id="h-press">Press &amp; posts</h2>
+          <div class="filters" role="group" aria-label="Filter by type" data-filters>
+            <button type="button" data-f="all" aria-pressed="true">All</button>
+            <button type="button" data-f="news" aria-pressed="false">News</button>
+            <button type="button" data-f="post" aria-pressed="false">Posts &amp; video</button>
+            <button type="button" data-f="paper" aria-pressed="false">Papers</button>
+            <button type="button" data-f="talk" aria-pressed="false">Talks</button>
+            <button type="button" data-f="work" aria-pressed="false">Reports &amp; tools</button>
+          </div>
+        </div>
+        <ul class="feed" data-feed></ul>
+        <button class="btn ghost more" type="button" data-more hidden>Show all</button>
+      </div>
+    </section>
 
-        // Function to create a social link HTML element
-        function createSocialLink(link, includeText = false) {
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.target = "_blank";
-            
-            const i = document.createElement('i');
-            i.className = `${link.icon} text-3xl`;
-            if (includeText) {
-                i.className += " mr-2";
-            }
-            a.appendChild(i);
+    <!-- ═══════════ Contact ═══════════ -->
+    <section id="contact" class="appendix alt contact" aria-labelledby="h-contact">
+      <div class="wrap twocol">
+        <div>
+          <h2 id="h-contact">Let's work together</h2>
+          <p class="prose">I'm interested in roles and collaborations in flood modelling, geospatial AI, remote sensing and open water data. That includes industry, agencies and academia.</p>
+          <ul class="contactlist">
+            <li><a href="mailto:amandal2023@fau.edu"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>amandal2023@fau.edu</a></li>
+            <li><a href="https://www.linkedin.com/in/anil-kumar-mandal-9b2094140/"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+            <li><a href="https://github.com/mandalanil"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+            <li><a href="https://scholar.google.com/citations?user=Fvs_P1QAAAAJ&amp;hl=en"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar</a></li>
+            <li><a href="Anil_Mandal_CV.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Download CV (PDF)</a></li>
+          </ul>
+          <p class="muted">Center for Water Resiliency and Risk Reduction, Florida Atlantic University, Boca Raton, FL</p>
+        </div>
+        <form class="form" id="contact-form" action="https://formspree.io/f/xovlzqjo" method="POST">
+          <label>Name <input type="text" name="name" autocomplete="name" required></label>
+          <label>Email <input type="email" name="_replyto" autocomplete="email" required></label>
+          <label>Subject <input type="text" name="_subject" required></label>
+          <label>Message <textarea name="message" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Send message</button>
+          <p class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-            if (includeText && link.text) {
-                const textNode = document.createTextNode(link.text);
-                a.className = "bg-gray-300 text-gray-800 px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:bg-gray-400 transition-colors duration-300";
-                a.appendChild(textNode);
-            } else {
-                 a.className = "text-gray-600 hover:text-[#0D47A1] transform transition-transform duration-300 hover:scale-125";
-            }
-            return a;
-        }
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span data-year>2026</span> Anil Kumar Mandal</span>
+      <span>News photos credited to their publishers. <a href="#prologue">Back to top</a></span>
+    </div>
+  </footer>
 
-        // Dynamically add social links to the home section
-        const homeSocialLinksContainer = document.getElementById('home-social-links');
-        // Clear existing content to avoid duplication on re-renders
-        homeSocialLinksContainer.innerHTML = '';
-        const homeLinks = ['linkedin', 'github', 'googleScholar'];
-        homeLinks.forEach(key => {
-            homeSocialLinksContainer.appendChild(createSocialLink(socialLinks[key], true));
-        });
-
-        // Dynamically add social links to the contact section
-        const contactSocialLinksContainer = document.getElementById('contact-social-links');
-        // Clear existing content to avoid duplication on re-renders
-        contactSocialLinksContainer.innerHTML = '';
-        const contactLinks = ['linkedin', 'github', 'instagram', 'facebook'];
-        contactLinks.forEach(key => {
-            contactSocialLinksContainer.appendChild(createSocialLink(socialLinks[key], false));
-        });
-
-        // Toggle mobile menu visibility
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Hide mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Get the scroll-up button element
-        const scrollUpBtn = document.querySelector('.scroll-up-btn');
-        
-        // Listen for scroll events on the window
-        window.addEventListener('scroll', () => {
-            // Show the button if the user has scrolled down more than 500 pixels
-            if (window.scrollY > 500) {
-                scrollUpBtn.classList.add('show');
-            } else {
-                // Hide the button if the user is near the top of the page
-                scrollUpBtn.classList.remove('show');
-            }
-        });
-
-        // Add a click event listener to the scroll-up button
-        scrollUpBtn.addEventListener('click', () => {
-            // Smoothly scroll the page back to the top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Get the contact form and status message elements
-        const form = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-
-        // Listen for form submission
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault(); // Prevent the default form submission behavior
-            
-            // Create a FormData object from the form
-            const formData = new FormData(form);
-            
-            try {
-                // Submit the form data to Formspree
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    // On success, show the success message
-                    formStatus.textContent = "Thank you! Your message has been sent.";
-                    formStatus.classList.remove('hidden', 'text-red-600');
-                    formStatus.classList.add('text-green-600');
-                    form.reset(); // Clear the form fields
-                    // Hide the message after 5 seconds
-                    setTimeout(() => {
-                        formStatus.classList.add('hidden');
-                    }, 5000);
-                } else {
-                    // On failure, show an error message
-                    formStatus.textContent = "Oops! There was a problem submitting your form.";
-                    formStatus.classList.remove('hidden', 'text-green-600');
-                    formStatus.classList.add('text-red-600');
-                }
-            } catch (error) {
-                // Handle any network or other errors
-                formStatus.textContent = "Error: Could not connect to the server.";
-                formStatus.classList.remove('hidden', 'text-green-600');
-                formStatus.classList.add('text-red-600');
-            }
-        });
-    </script>
-
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script src="data/story.js"></script>
+  <script src="assets/js/story.js"></script>
 </body>
-
 </html>

@@ -1,19 +1,24 @@
-# Portfolio
+# Portfolio — Anil Kumar Mandal
 
-Personal portfolio of **Anil Kumar Mandal**, Graduate Research Assistant at Florida Atlantic University and President of the ASPRS FAU Student Chapter.
+A narrative portfolio: from GIS and drone mapping in Nepal, through flood modelling at FAU's
+Center for Water Resiliency and Risk Reduction (CWR³), to the ASPRS FAU Student Chapter and the
+launch of CWR³Data. Each chapter is backed by the original public news articles, posts and papers.
 
-Live site: https://mandalanil.github.io/Portfolio/
+**Live:** https://mandalanil.github.io/Portfolio/
 
-## Sections
+## Structure
 
-- **About / Experience** — research at FAU (CWR3) and GIS & remote sensing work at NAXA
-- **Projects** — public repositories:
-  - [ESTGCN](https://github.com/mandalanil/ESTGCN) — graph neural networks for rainfall–runoff prediction in HUC12 watersheds
-  - [ClimateChange](https://github.com/mandalanil/ClimateChange) — 43-year Florida climate–vegetation (NDVI) analysis
-  - [Semi-Automated Flood Risk Mapping](https://github.com/mandalanil/Semi-Automated-workflow-for-flood-risk-mapping) — multi-scenario ArcGIS Pro workflow
-  - [FloodFusion](https://github.com/mandalanil/FloodFusion) — Sentinel-1/2 flood mapping app on Google Earth Engine
-  - [GeoAI Roadmap for Nepal](https://github.com/mandalanil/GeoAI_roadmap4Nepal) — interactive policy report
-- **Leadership & Service** — ASPRS FAU Student Chapter and partner organizations
-- **Skills, Publications, Contact**
+```
+index.html            Story page: chapters, publications, contact (static HTML)
+data/story.js         All evidence items, talks, code cards and the press feed
+assets/js/story.js    Renders cards from data/story.js; theme, scroll-spy, lazy embeds
+assets/css/story.css  Design tokens (light/dark), layout and print styles
+images/story/         WebP images (hero, headshot, press, events, figures, logos)
+assets/docs/          Downloadable PDFs
+Anil_Mandal_CV.pdf    CV
+404.html              Redirects old pages (projects.html) to the new sections
+```
 
-Built with plain HTML, Tailwind CSS (CDN) and Font Awesome; served by GitHub Pages.
+Plain HTML, CSS and JavaScript, with no build step, served by GitHub Pages.
+
+To add a news article, LinkedIn post or paper, see [CONTENT.md](CONTENT.md).
