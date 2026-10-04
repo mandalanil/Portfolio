@@ -166,7 +166,7 @@ window.STORY = {
       chapter: "ch1", featured: true, tags: ["video", "PGIS"], status: "verified"
     },
 
-    /* ───────────── Chapter 2 · A new coast ───────────── */
+    /* ───────────── Chapter 2 · Education & Awards ───────────── */
     {
       id: "fau-gisday-2023", type: "news", date: "2023-11-16",
       title: "CEGE students won the Student Presentation Competition on GIS Day at FAU",
