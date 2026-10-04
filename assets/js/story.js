@@ -353,11 +353,66 @@
     if (ids.indexOf(start) > -1) open(start); else show(ids[0]);
   }
 
+
+  /* ---------- chapters: summary first, details on demand ----------
+   * Each chapter shows its header, number tiles and (ch5) launch card.
+   * Everything else moves into a collapsed panel behind "Read the chapter".
+   * Links to a chapter, or to anything inside one, open it first.
+   */
+  function collapsibleChapters() {
+    var KEEP = ".chead, .metrics, .launch";
+    var chapters = $all(".chapter").filter(function (c) { return /^ch\d$/.test(c.id); });
+    chapters.forEach(function (sec) {
+      var wrap = $(".wrap", sec); if (!wrap) return;
+      var deep = document.createElement("div");
+      deep.className = "deep"; deep.id = sec.id + "-more"; deep.hidden = true;
+      Array.prototype.slice.call(wrap.children).forEach(function (el) { if (!el.matches(KEEP)) deep.appendChild(el); });
+      if (!deep.children.length) return;
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.className = "btn ghost readmore";
+      btn.setAttribute("aria-expanded", "false"); btn.setAttribute("aria-controls", deep.id);
+      btn.innerHTML = "<span>Read the chapter</span>" + icon("chev");
+      btn.addEventListener("click", function () { setOpen(sec, deep.hidden); });
+      wrap.appendChild(btn); wrap.appendChild(deep);
+      sec.classList.add("collapsible");
+    });
+    function setOpen(sec, open) {
+      var deep = $(".deep", sec), btn = $(".readmore", sec); if (!deep) return;
+      deep.hidden = !open;
+      sec.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", String(open));
+      $("span", btn).textContent = open ? "Show less" : "Read the chapter";
+      if (open) $all(".reveal", deep).forEach(function (e) { e.classList.add("in"); });
+    }
+    function openFor(id) {
+      var el = id && document.getElementById(id); if (!el) return false;
+      var sec = el.closest(".chapter.collapsible"); if (!sec) return false;
+      if (el !== sec && $(".deep", sec).contains(el)) setOpen(sec, true);
+      return true;
+    }
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+      var id = a.getAttribute("href").slice(1), el = document.getElementById(id);
+      if (!el || !openFor(id)) return;
+      if (el.classList.contains("collapsible")) setOpen(el, true);   // overview tile / top bar: open the chapter
+      e.preventDefault();
+      history.pushState(null, "", "#" + id);
+      el.scrollIntoView();
+    });
+    var start = location.hash.slice(1);
+    if (start && openFor(start)) {
+      var t = document.getElementById(start);
+      if (t.classList.contains("collapsible")) setOpen(t, true);
+      t.scrollIntoView();
+    }
+  }
+
   renderChapters();
   renderTalks();
   renderCode();
   renderFeed();
   launchCard();
+  collapsibleChapters();
   lazyEmbeds();
   reveal();
   scrollSpy();
